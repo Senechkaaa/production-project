@@ -1,0 +1,37 @@
+import { Configuration } from "webpack";
+import { BuildOptions } from "./types/config";
+import { buildPlugins } from "./buildPlugins";
+import { buildLoaders } from "./buildLoaders";
+import { buildResolvers } from "./buildResolvers";
+import { buildDevServer } from "./buildDevServer";
+
+export function buildWebpackConfig(options: BuildOptions): Configuration {
+    
+    const {mode, paths, isDev} = options
+    
+    const a = 5;
+
+    for (let i = 0; i <= 5; i++) {
+        console.log(i)
+    }
+
+    return {
+        mode: mode,
+        entry: paths.entry,
+        output: {
+            filename: "[name].[contenthash].js",
+            path: paths.build,
+            clean: true,
+        },
+       plugins: buildPlugins(options),
+        module: {
+            rules: buildLoaders(options),
+          },
+          resolve: buildResolvers(),
+        //   настройка путей
+          devtool: isDev ? 'inline-source-map' : false,
+        //   если дев, то будет показывать азгрузка
+          devServer: isDev ? buildDevServer(options) : undefined,
+        //   если дев режим, то сервер запустится
+    }
+}
