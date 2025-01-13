@@ -15,6 +15,9 @@
       "esModuleInterop": true,
     //   для поддержки export default
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     },
     "ts-node": {
     "compilerOptions": {
