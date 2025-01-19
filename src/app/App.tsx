@@ -4,12 +4,12 @@ import { AppRouter } from './providers/router'
 import { NavBar } from 'widgets/Navbar'
 import { useTheme } from './providers/ThemeProvider'
 import { Sidebar } from 'widgets/Sidebar'
-import { Suspense } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Suspense, useState } from 'react'
 
 const App = () => {
     const { theme } = useTheme()
 
+    const [sigma, setSigma] = useState()
 
     return (
         <div className={classNames('app', {}, [theme])}>
