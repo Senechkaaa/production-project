@@ -1,9 +1,9 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
-import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, webpack, WebpackPluginInstance } from "webpack";
+import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, WebpackPluginInstance } from "webpack";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstance[] {
 
@@ -29,5 +29,8 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
         new ReactRefreshWebpackPlugin(),
         new HotModuleReplacementPlugin(),
         //  плагин по типу Live Server
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false
+        }),
     ] 
 }

@@ -5,7 +5,7 @@ import { PageLoader } from 'shared/ui/PageLoader/PageLoader'
 
 const AppRouter = () => {
     return (
-        <Suspense fallback={<PageLoader/>}>
+        <Suspense fallback={<PageLoader />}>
             <Routes>
                 {Object.values(routeConfig).map(({ element, path }) => (
                     <Route
