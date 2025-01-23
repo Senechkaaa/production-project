@@ -1,13 +1,20 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, WebpackPluginInstance } from "webpack";
-import { BuildOptions } from "./types/config";
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import {
+    DefinePlugin,
+    HotModuleReplacementPlugin,
+    ProgressPlugin,
+    WebpackPluginInstance,
+} from 'webpack'
+import { BuildOptions } from './types/config'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstance[] {
-
-    return [
+export function buildPlugins({
+    paths,
+    isDev,
+}: BuildOptions): WebpackPluginInstance[] {
+    const plugins = [
         new HtmlWebpackPlugin({
             template: paths.html,
             // template - чтобы отображался div с классом root
@@ -25,12 +32,17 @@ export function buildPlugins({paths, isDev}: BuildOptions): WebpackPluginInstanc
             __IS_DEV__: JSON.stringify(isDev),
         }),
         // с помощью него в приложение можно прокидывать глобальные переменные
-        new HotModuleReplacementPlugin(),
         new ReactRefreshWebpackPlugin(),
-        new HotModuleReplacementPlugin(),
-        //  плагин по типу Live Server
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false
-        }),
-    ] 
+    ]
+    if (isDev) {
+        plugins.push(
+            new HotModuleReplacementPlugin(),
+            //  плагин по типу Live Server
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false,
+            }),
+        )
+    }
+
+    return plugins
 }
