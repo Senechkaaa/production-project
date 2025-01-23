@@ -1,5 +1,4 @@
 {
-    // "include": ["./config/jest/setupTests.ts"],
     "compilerOptions": {
         "outDir": "./dist/",
         //   то, куда производится сборка
@@ -24,5 +23,11 @@
         "compilerOptions": {
             "module": "CommonJS"
         }
-    }
+    },
+    "include": [
+        "./jest-setup.ts",
+        // чтобы работал jest dom
+        "./src/**/*.ts",
+        "./src/**/*.tsx"
+    ]
 }

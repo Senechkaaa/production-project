@@ -4,7 +4,6 @@ import { FC, useState } from 'react'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 import { Button } from 'shared/ui/Button/Button'
-
 interface SidebarProps {
     className?: string
 }
