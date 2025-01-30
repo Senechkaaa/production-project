@@ -40,6 +40,7 @@ export function buildPlugins({
             //  плагин по типу Live Server
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
+                // можно просматривать размер файлов, пакетов и тд
             }),
         )
     }

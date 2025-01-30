@@ -2,6 +2,7 @@ const { promisify } = require('util')
 const { readdir, writeFile } = require('fs')
 const { join: joinPath, relative } = require('path')
 
+// script с github для просмотра тестов storybook(Не обязательно)
 const asyncReaddir = promisify(readdir)
 const writeFileAsync = promisify(writeFile)
 

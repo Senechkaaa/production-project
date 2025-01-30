@@ -7,7 +7,8 @@ import i18nForTests from 'shared/config/i18n/i18nForTests'
 export interface componentRenderOptions {
     route?: string
 }
-// оборачивает тестируемый компонент в обертку с i18n
+// оборачивает тестируемый компонент в обертку с i18n и роутером
+// MemoryRouter используется для имитации поведения маршрутизации в приложении.
 export function componentRender(
     component: ReactNode,
     options: componentRenderOptions = {},
