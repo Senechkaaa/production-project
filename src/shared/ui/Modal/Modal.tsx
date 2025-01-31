@@ -8,17 +8,26 @@ interface ModalProps {
     className?: string
     children?: ReactNode
     isOpen?: boolean
-    onClose?: () => void
+    onClose?: () => void,
+    lazy: boolean
 }
 
 const ANIMATIONDELAY = 300
 
 export const Modal = (props: ModalProps) => {
-    const { children, className, isOpen, onClose } = props
+    const { children, className, isOpen, onClose, lazy } = props
 
     const [isClosing, setIsClosing] = useState(false)
+    const [isMounted, setIsMounted] = useState(false)
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
     const {theme} = useTheme()
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true)
+            // при открытии сразу маунтим его
+        }
+    }, [isOpen])
 
     // на каждый перерендер компонент эти функции создаются заново => у каждой функции новая ссылка, и чтобы ее сохраняться мы используем useCallback
     const closeHandler = useCallback(() => {
@@ -59,6 +68,12 @@ export const Modal = (props: ModalProps) => {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     }
+
+    if (lazy && !isMounted) {
+        return null;
+    }
+
+    // Если компонент не замаунтился то не создаем его
 
     return (
         <Portal>
