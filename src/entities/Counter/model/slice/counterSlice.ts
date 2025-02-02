@@ -4,7 +4,6 @@ import { CounterSchema } from '../types/counterSchema'
 const initialState: CounterSchema = {
     value: 0
 }
-console.log(initialState.value)
 
 const counterSlice = createSlice({
     name: 'counter',

@@ -15,6 +15,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = (props) => {
+    
     const [collapsed, setCollapsed] = useState(false)
     const { className } = props
     const { t } = useTranslation()
@@ -25,6 +26,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
     return (
         <div
+        
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,

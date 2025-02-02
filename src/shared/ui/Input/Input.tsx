@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { classNames } from "shared/lib/classNames/classnames"
 import cls from "./Input.module.scss"
 import { InputHTMLAttributes, memo, useEffect, useRef, useState } from "react"
@@ -28,11 +29,11 @@ export const Input = memo((props: InputProps) => {
     const [isFocused, setIsFocused] = useState(false)
     const [caretPosition, setCaretPosition] = useState(0)
     const ref = useRef<HTMLInputElement>(null)
-    
+
     useEffect(() => {
         if (autofocus) {
             setIsFocused(true)
-            ref.current.focus();
+            ref.current.focus()
         }
     }, [autofocus])
 
@@ -49,6 +50,7 @@ export const Input = memo((props: InputProps) => {
         setIsFocused(true)
     }
 
+    // eslint disable no-explicit-any
     const onSelect = (e: any) => {
         setCaretPosition(e?.target?.selectionStart || 0)
         // узнать где находится курсор каретки
