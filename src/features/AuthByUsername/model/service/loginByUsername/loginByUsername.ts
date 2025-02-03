@@ -7,7 +7,9 @@ interface LoginByUsernameProps {
     username: string
     password: string
 }
+// 3 вызова диспатча
 
+// 1 вызов dispatch
 export const loginByUsername = createAsyncThunk<
     User,
     LoginByUsernameProps,
@@ -19,14 +21,21 @@ export const loginByUsername = createAsyncThunk<
             authData,
         )
         if (!response.data) {
-            throw new Error();
+            throw new Error()
         }
-        
+
+        // 2 вызов dispatch
         thunkAPI.dispatch(userActions.setAuthData(response.data))
-        localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
+        localStorage.setItem(
+            USER_LOCALSTORAGE_KEY,
+            JSON.stringify(response.data),
+        )
+
+        // 3 вызов dispatch
         return response.data
-    } catch (e) {
+    } catch (e) { // 1 вызов dispatch
         console.log(e)
+        // 2 вызов dispatch
         return thunkAPI.rejectWithValue("error")
     }
 })

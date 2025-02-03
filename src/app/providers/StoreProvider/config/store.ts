@@ -2,7 +2,7 @@ import {
     configureStore,
     ReducersMapObject,
 } from "@reduxjs/toolkit"
-import { StateSchema } from "./StateSchema"
+import { ReduxStoreWithManager, StateSchema } from "./StateSchema"
 import { counterReducer } from "entities/Counter"
 import { userReducer } from "entities/User"
 import { createReducerManager } from "./reducerManager"
@@ -28,7 +28,7 @@ export function createReduxStore(
         // для предварительной загрузки данных
     })
 
-    // @ts-expect-error
+    // @ts-expect-error@typescript-eslint/ban-ts-comment
     store.reducerManager = reducerManager
 
     return store
