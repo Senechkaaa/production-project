@@ -2,18 +2,18 @@ import { WebpackConfiguration } from 'webpack-dev-server'
 import { BuildPaths } from '../build/types/config'
 import path from 'path'
 import { buildCssLoader } from '../build/loaders/buildCssLoader'
-import { RuleSetRule } from 'webpack'
+import { DefinePlugin, RuleSetRule } from 'webpack'
 
 // файл нужен для переопределения конфига.
 export default ({ config }: { config: WebpackConfiguration }) => {
     const paths: BuildPaths = {
-        build: '',
-        html: '',
-        entry: '',
-        src: path.resolve(__dirname, '..', '..', 'src'),
+        build: "",
+        html: "",
+        entry: "",
+        src: path.resolve(__dirname, "..", "..", "src"),
     }
     config.resolve?.modules?.push(paths.src)
-    config.resolve?.extensions?.push('.ts', '.tsx')
+    config.resolve?.extensions?.push(".ts", ".tsx")
 
     // дефолтный loader который был настроен для svg теперь обрабатывать ее не будет
 
@@ -28,9 +28,15 @@ export default ({ config }: { config: WebpackConfiguration }) => {
 
     config.module?.rules?.push({
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: ["@svgr/webpack"],
     })
     config.module?.rules?.push(buildCssLoader(true))
+    config.plugins?.push(
+        new DefinePlugin({
+            __IS_DEV__: true,
+        }),
+    );
+    // добавляем глобальную переменную __IS_DEV__ в среду разработки, чтобы не было ошибки
 
     return config
 }

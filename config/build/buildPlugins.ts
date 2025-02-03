@@ -1,14 +1,14 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+import HtmlWebpackPlugin from "html-webpack-plugin"
 import {
     DefinePlugin,
     HotModuleReplacementPlugin,
     ProgressPlugin,
     WebpackPluginInstance,
-} from 'webpack'
-import { BuildOptions } from './types/config'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+} from "webpack"
+import { BuildOptions } from "./types/config"
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 
 export function buildPlugins({
     paths,
@@ -23,9 +23,9 @@ export function buildPlugins({
         new ProgressPlugin(),
         // отслеживать за прогрессом
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
+            filename: "css/[name].[contenthash:8].css",
             // [contenthash:8] - делает уникальным css файлом
-            chunkFilename: 'css/[name].[contenthash:8].css',
+            chunkFilename: "css/[name].[contenthash:8].css",
         }),
         // извлекет css в отдельные файлы
         new DefinePlugin({
@@ -34,6 +34,7 @@ export function buildPlugins({
         // с помощью него в приложение можно прокидывать глобальные переменные
         new ReactRefreshWebpackPlugin(),
     ]
+    
     if (isDev) {
         plugins.push(
             new HotModuleReplacementPlugin(),
