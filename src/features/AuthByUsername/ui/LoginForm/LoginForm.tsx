@@ -3,7 +3,7 @@ import cls from "./LoginForm.module.scss"
 import { useTranslation } from "react-i18next"
 import { Button, ButtonTheme } from "shared/ui/Button/Button"
 import { Input } from "shared/ui/Input/Input"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { memo, useCallback } from "react"
 import { loginActions, loginReducer } from "../../model/slice/loginSlice"
 import { loginByUsername } from "../../model/service/loginByUsername/loginByUsername"
@@ -12,20 +12,25 @@ import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLogi
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword"
 import { getLoginLoading } from "../../model/selectors/getLoginLoading/getLoginLoading"
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError"
-import { DynamicModuleLoaderProps, ReducersList } from "shared/lib/components/DynamicModuleLoaderProps/DynamicModuleLoaderProps"
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
 
 export interface LoginFormProps {
     className?: string
+    onSuccess: () => void
 }
 
-// ВЫНОСИМ КОНСТАНТУ, ЧТОБЫ НА КАЖДОМ РЕНДЕРЕ КОМПОНЕНТА НЕ СОЗДАВАЛСЯ НОВЫЙ ОБЬЕКТ И НОВАЯ ССЫЛКА 
+// ВЫНОСИМ КОНСТАНТУ, ЧТОБЫ НА КАЖДОМ РЕНДЕРЕ КОМПОНЕНТА НЕ СОЗДАВАЛСЯ НОВЫЙ ОБЬЕКТ И НОВАЯ ССЫЛКА
 const initialReducers: ReducersList = {
-    "loginForm": loginReducer
+    loginForm: loginReducer,
 }
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation()
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const username = useSelector(getLoginUsername)
     const password = useSelector(getLoginPassword)
     const isLoading = useSelector(getLoginLoading)
@@ -45,12 +50,16 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
         [dispatch],
     )
 
-    const onLoginClick = useCallback(() => {
-        dispatch(loginByUsername({ username, password }))
-    }, [dispatch, password, username])
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({ username, password }))
+        if (result.meta.requestStatus === "fulfilled") {
+            onSuccess()
+            // если вход удался, то нужно закрыть модалку
+        }
+    }, [dispatch, password, username, onSuccess])
 
     return (
-        <DynamicModuleLoaderProps reducers={initialReducers}>
+        <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t("Форма авторизации")} />
                 {error && (
@@ -85,7 +94,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
                     {t("Войти")}
                 </Button>
             </div>
-        </DynamicModuleLoaderProps>
+        </DynamicModuleLoader>
     )
 })
 export default LoginForm

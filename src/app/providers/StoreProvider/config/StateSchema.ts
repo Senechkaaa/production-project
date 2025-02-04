@@ -3,6 +3,7 @@ import { CounterSchema } from "entities/Counter";
 import { UserSchema } from "entities/User";
 import { LoginSchema } from "features/AuthByUsername";
 import { Reducer } from "@reduxjs/toolkit";
+import { ProfileSchema } from "entities/Profile";
 
 
 export interface StateSchema {
@@ -12,6 +13,7 @@ export interface StateSchema {
     // Асинхронные редюсеры
     // мы будем подгружать их через reducerManager 
     loginForm?: LoginSchema
+    profile?: ProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

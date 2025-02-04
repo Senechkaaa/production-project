@@ -25,5 +25,14 @@
             "password": "123"
         }
     ],
-    "profile": { "name": "typicode" }
+    "profile": {
+        "first": "John",
+        "lastname": "Western",
+        "age": 30,
+        "currency": "USD",
+        "country": "USA",
+        "city": "New-York",
+        "username": "admin",
+        "avatar": "https://images.boosty.to/user/7401400/avatar?change_time=1652344439"
+    }
 }

@@ -11,6 +11,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
     // Return - то что возвращает AsyncAction
     // Arg - аргументы его - пропсы
     // RejectedValue - ошибка
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dispatch: jest.MockedFn<any>
     getState: () => StateSchema
     // мокаем функции

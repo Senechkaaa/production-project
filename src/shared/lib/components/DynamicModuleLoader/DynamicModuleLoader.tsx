@@ -12,13 +12,13 @@ export type ReducersList = {
 type ReducersListEntry = [StateSchemaKey, Reducer]
 // тип ключ - значение
 
-interface DynamicModuleLoaderPropsProps {
+interface DynamicModuleLoaderProps {
     reducers: ReducersList
     removeAfterUnmount?: boolean
     // пропс - будем ли мы удалять компонент посел анмаунта
 }
 
-export const DynamicModuleLoaderProps: FC<DynamicModuleLoaderPropsProps> = (
+export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (
     props,
 ) => {
     const { children, reducers, removeAfterUnmount } = props
@@ -31,7 +31,7 @@ export const DynamicModuleLoaderProps: FC<DynamicModuleLoaderPropsProps> = (
             ([name, reducer]: ReducersListEntry) => {
                 store.reducerManager.add(name, reducer)
                 // при моунте компонента, добавляем reducers, а именно - loginreducer
-                dispatch({ type: "@INIT ${name}reducer" })
+                dispatch({ type: `@INIT ${name} reducer` })
             },
         )
 
