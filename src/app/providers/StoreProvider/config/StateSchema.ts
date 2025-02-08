@@ -40,6 +40,7 @@ export interface ThunkExtraArg {
 }
 
 export interface ThunkConfig<T> {
-    rejectValue: T;
+    rejectValue: T
     extra: ThunkExtraArg
+    state: StateSchema
 }

@@ -1,13 +1,7 @@
-import axios from "axios"
 import { loginByUsername } from "./loginByUsername"
 import { userActions } from "entities/User"
 import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk"
 
-jest.mock("axios")
-// мокаем axios
-
-const mockedAxios = jest.mocked(axios, true)
-// флаг true укаывает что мы мокаем внутренние поля, например post
 
 describe("loginByUsername.test", () => {
     test("success login", async () => {

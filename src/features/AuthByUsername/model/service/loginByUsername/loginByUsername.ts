@@ -30,7 +30,7 @@ export const loginByUsername = createAsyncThunk<
         // 2 вызов dispatch
         dispatch(userActions.setAuthData(response.data))
 
-        extra.navigate!("/about")
+
         // 3 вызов dispatch
         return response.data
     } catch (e) {

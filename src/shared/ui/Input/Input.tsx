@@ -1,18 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { classNames } from "shared/lib/classNames/classnames"
+import { classNames, Mods } from "shared/lib/classNames/classnames"
 import cls from "./Input.module.scss"
 import { InputHTMLAttributes, memo, useEffect, useRef, useState } from "react"
 
 type HtmlInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    "value" | "onChange"
+    "value" | "onChange" | "readOnly"
 >
 
 interface InputProps extends HtmlInputProps {
     className?: string
-    value?: string
-    onChange?: (value: string) => void,
-    autofocus?: boolean,
+    value?: string | number
+    onChange?: (value: string) => void
+    autofocus?: boolean
+    readonly?: boolean
 }
 
 export const Input = memo((props: InputProps) => {
@@ -23,12 +24,15 @@ export const Input = memo((props: InputProps) => {
         type = "text",
         placeholder,
         autofocus,
+        readonly,
         ...otherProps
     } = props
 
     const [isFocused, setIsFocused] = useState(false)
     const [caretPosition, setCaretPosition] = useState(0)
     const ref = useRef<HTMLInputElement>(null)
+
+    const isCaretVisible = isFocused && !readonly
 
     useEffect(() => {
         if (autofocus) {
@@ -56,8 +60,12 @@ export const Input = memo((props: InputProps) => {
         // узнать где находится курсор каретки
     }
 
+    const mods: Mods = {
+        [cls.readonly]: readonly
+    }
+
     return (
-        <div className={classNames(cls.InputWrapper, {}, [className])}>
+        <div className={classNames(cls.InputWrapper, mods, [className])}>
             {placeholder && (
                 <div className={cls.placeholder}>{`${placeholder}>`}</div>
             )}
@@ -70,10 +78,11 @@ export const Input = memo((props: InputProps) => {
                     onChange={onChangeHandler}
                     type={type}
                     className={cls.input}
+                    readOnly={readonly}
                     onSelect={onSelect}
                     {...otherProps}
                 />
-                {isFocused && (
+                {isCaretVisible && (
                     <span
                         style={{ left: `${caretPosition * 9}px` }}
                         className={cls.caret}

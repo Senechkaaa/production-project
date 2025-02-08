@@ -11,6 +11,7 @@ type ActionCreatorType<Return, Arg, RejectedValue> = (arg: Arg) => AsyncThunkAct
 jest.mock('axios')
 
 const mokedAxios = jest.mocked(axios, true)
+// флаг true укаывает что мы мокаем внутренние поля, например post
 
 export class TestAsyncThunk<Return, Arg, RejectedValue> {
     // Return - то что возвращает AsyncAction
