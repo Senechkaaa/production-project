@@ -1,5 +1,6 @@
 import { AsyncThunkAction } from "@reduxjs/toolkit"
 import { StateSchema } from "app/providers/StoreProvider"
+import axios, { AxiosStatic } from "axios"
 
 type ActionCreatorType<Return, Arg, RejectedValue> = (arg: Arg) => AsyncThunkAction<
     Return,
@@ -7,31 +8,50 @@ type ActionCreatorType<Return, Arg, RejectedValue> = (arg: Arg) => AsyncThunkAct
     { rejectValue: RejectedValue }
 >
 
+jest.mock('axios')
+
+const mokedAxios = jest.mocked(axios, true)
+
 export class TestAsyncThunk<Return, Arg, RejectedValue> {
     // Return - то что возвращает AsyncAction
     // Arg - аргументы его - пропсы
     // RejectedValue - ошибка
+
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dispatch: jest.MockedFn<any>
     getState: () => StateSchema
     // мокаем функции
+
     actionCreator: ActionCreatorType<Return, Arg, RejectedValue>
+
+    api: jest.MockedFunctionDeep<AxiosStatic>
+    // jest.MockedFunctionDeep<AxiosStatic> тип, который возвращает mokedAxios
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    navigate: jest.MockedFn<any>
 
     constructor(actionCreator: ActionCreatorType<Return, Arg, RejectedValue>) {
         this.actionCreator = actionCreator
         this.dispatch = jest.fn()
         this.getState = jest.fn()
+
+        this.api = mokedAxios
+        this.navigate = jest.fn()
     }
 
     async callThunk(arg: Arg) {
         const action = this.actionCreator(arg) // устанавливает значение, которое вернет сервер
         // loginByUsername - создает асинхроный createAsyncThunk - action
 
-        const result = await action(this.dispatch, this.getState, undefined)
-        // const action: (dispatch: ThunkDispatch<unknown, unknown, AnyAction>, getState: () => unknown, extra: unknown) - вот что принимает в качестве аргументов action
+        const result = await action(
+            this.dispatch, // сам dispatch
+            this.getState, // getState
+            {api: this.api, navigate: this.navigate} // extra args
+        )
+        // action принимает три аргумента 
 
         return result
-
         // result ниже
     }
 }

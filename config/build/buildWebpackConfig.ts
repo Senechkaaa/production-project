@@ -8,11 +8,6 @@ import { buildDevServer } from './buildDevServer'
 export function buildWebpackConfig(options: BuildOptions): Configuration {
     const { mode, paths, isDev } = options
 
-    const a = 5
-
-    for (let i = 0; i <= 5; i++) {
-        console.log(i)
-    }
     return {
         mode: mode,
         entry: paths.entry,

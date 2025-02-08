@@ -13,6 +13,7 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 export function buildPlugins({
     paths,
     isDev,
+    apiUrl
 }: BuildOptions): WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
@@ -30,6 +31,7 @@ export function buildPlugins({
         // извлекет css в отдельные файлы
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl)
         }),
         // с помощью него в приложение можно прокидывать глобальные переменные
         new ReactRefreshWebpackPlugin(),
@@ -39,10 +41,11 @@ export function buildPlugins({
         plugins.push(
             new HotModuleReplacementPlugin(),
             //  плагин по типу Live Server
-            new BundleAnalyzerPlugin({
-                openAnalyzer: false,
-                // можно просматривать размер файлов, пакетов и тд
-            }),
+            // new BundleAnalyzerPlugin({
+            //     openAnalyzer: false,
+            //     // можно просматривать размер файлов, пакетов и тд
+            //     analyzerPort: 9999
+            // }),
         )
     }
 

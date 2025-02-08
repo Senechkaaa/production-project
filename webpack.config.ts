@@ -14,7 +14,8 @@ export default (env: BuildEnv) => {
 
     const mode = env.mode || 'development'
     const PORT = env.port || 3000
-    console.log(PORT)
+    const apiUrl = env.apiUrl || "http://localhost:8000"
+
     const isDev = mode === 'development'
 
     //  npx webpack --config webpack.config.ts
@@ -23,6 +24,7 @@ export default (env: BuildEnv) => {
         paths,
         isDev,
         port: PORT,
+        apiUrl: apiUrl,
     })
     return config
 }

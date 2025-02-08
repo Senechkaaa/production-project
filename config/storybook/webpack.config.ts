@@ -33,9 +33,10 @@ export default ({ config }: { config: WebpackConfiguration }) => {
     config.module?.rules?.push(buildCssLoader(true))
     config.plugins?.push(
         new DefinePlugin({
-            __IS_DEV__: true,
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify(''),
         }),
-    );
+    )
     // добавляем глобальную переменную __IS_DEV__ в среду разработки, чтобы не было ошибки
 
     return config

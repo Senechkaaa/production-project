@@ -8,7 +8,8 @@
         "target": "es5",
         "jsx": "react-jsx",
         "allowJs": true,
-        //   обрабатывает не только ts файлы, но и js
+        //   обрабатывает не только ts файлы, но и js,
+        "strict": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         //   позволяет работать с пакетами, которые используют
