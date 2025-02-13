@@ -13,7 +13,8 @@ import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 export function buildPlugins({
     paths,
     isDev,
-    apiUrl
+    apiUrl,
+    project
 }: BuildOptions): WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
@@ -31,7 +32,8 @@ export function buildPlugins({
         // извлекет css в отдельные файлы
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
-            __API__: JSON.stringify(apiUrl)
+            __API__: JSON.stringify(apiUrl),
+            __PROJECT__: JSON.stringify(project)
         }),
         // с помощью него в приложение можно прокидывать глобальные переменные
         new ReactRefreshWebpackPlugin(),

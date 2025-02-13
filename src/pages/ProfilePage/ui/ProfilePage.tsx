@@ -7,9 +7,11 @@ import {
     fetchProfileData,
     getProfileForm,
     getProfileReadonly,
+    getProfileValidateError,
     profileActions,
     ProfileCard,
     profileReducer,
+    ValidateProfileError,
 } from "entities/Profile"
 import { useCallback, useEffect } from "react"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
@@ -19,6 +21,8 @@ import { useSelector } from "react-redux"
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader"
 import { Currency } from "entities/Currency"
 import { Country } from "entities/Country"
+import { Text, TextTheme } from "shared/ui/Text/Text"
+import { useTranslation } from "react-i18next"
 
 interface ProfilePageProps {
     className?: string
@@ -29,15 +33,30 @@ const reducers: ReducersList = {
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-    // const { t } = useTranslation()
+    const { t } = useTranslation("profile")
     const dispatch = useAppDispatch()
     const formData = useSelector(getProfileForm)
     const isLoading = useSelector(getProfileIsLoading)
     const error = useSelector(getProfileError)
     const readonly = useSelector(getProfileReadonly)
+    const validateErrors = useSelector(getProfileValidateError)
+
+    const validateErrorTranslation = {
+        [ValidateProfileError.SERVER_ERROR]: t(
+            "Серверная ошибка при сохранении",
+        ),
+        [ValidateProfileError.INCORECT_AGE]: t("Некорректный возраст"),
+        [ValidateProfileError.INCORECT_COUNTRY]: t("Выберите Страну"),
+        [ValidateProfileError.INCORECT_USER_DATA]: t(
+            "Некорректное имя или фамилия",
+        ),
+        [ValidateProfileError.NO_DATA]: t("Нет данных"),
+    }
 
     useEffect(() => {
-        dispatch(fetchProfileData())
+        if (__PROJECT__ !== "storybook") {
+            dispatch(fetchProfileData())
+        }
     }, [dispatch])
 
     const onChangeFirstName = useCallback(
@@ -89,18 +108,25 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [dispatch],
     )
 
-    const onChangeCountry= useCallback(
+    const onChangeCountry = useCallback(
         (country?: Country) => {
             dispatch(profileActions.updateProfile({ country }))
         },
         [dispatch],
     )
 
-
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames("ProfilePage", {}, [className])}>
                 <ProfilePageHeader />
+                {validateErrors?.length &&
+                    validateErrors.map((err) => (
+                        <Text
+                            theme={TextTheme.ERROR}
+                            text={validateErrorTranslation[err]}
+                            key={err}
+                        />
+                    ))}
                 <ProfileCard
                     readonly={readonly}
                     data={formData}

@@ -6,5 +6,10 @@
     "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
     "Попробуйте обновить страницу": "Try refreshing the page",
     "Отменить": "Cancel",
-    "Сохранить": "Save"
+    "Сохранить": "Save",
+    "Серверная ошибка при сохранении": "Server error when saving",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректное имя или фамилия": "Incorrect first or last name",
+    "Выберите Страну": "Select Country",
+    "Нет данных": "No data"
 }

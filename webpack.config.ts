@@ -1,22 +1,22 @@
-import path from 'path'
-import webpack from 'webpack'
-import { buildWebpackConfig } from './config/build/buildWebpackConfig'
-import { BuildEnv, BuildPaths } from './config/build/types/config'
+import path from "path"
+import webpack from "webpack"
+import { buildWebpackConfig } from "./config/build/buildWebpackConfig"
+import { BuildEnv, BuildPaths } from "./config/build/types/config"
 
 export default (env: BuildEnv) => {
     // возвращаем функцию чтобы использовать переменные окружения env
     const paths: BuildPaths = {
-        entry: path.resolve(__dirname, 'src', 'index.tsx'),
-        build: path.resolve(__dirname, 'build'),
-        html: path.resolve(__dirname, 'public', `index.html`),
-        src: path.resolve(__dirname, 'src'),
+        entry: path.resolve(__dirname, "src", "index.tsx"),
+        build: path.resolve(__dirname, "build"),
+        html: path.resolve(__dirname, "public", `index.html`),
+        src: path.resolve(__dirname, "src"),
     }
 
-    const mode = env.mode || 'development'
+    const mode = env.mode || "development"
     const PORT = env.port || 3000
     const apiUrl = env.apiUrl || "http://localhost:8000"
 
-    const isDev = mode === 'development'
+    const isDev = mode === "development"
 
     //  npx webpack --config webpack.config.ts
     const config: webpack.Configuration = buildWebpackConfig({
@@ -25,6 +25,7 @@ export default (env: BuildEnv) => {
         isDev,
         port: PORT,
         apiUrl: apiUrl,
+        project: "frontend",
     })
     return config
 }
