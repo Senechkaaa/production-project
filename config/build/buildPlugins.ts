@@ -7,14 +7,14 @@ import {
 } from "webpack"
 import { BuildOptions } from "./types/config"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
+// import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 
 export function buildPlugins({
     paths,
     isDev,
     apiUrl,
-    project
+    project,
 }: BuildOptions): WebpackPluginInstance[] {
     const plugins = [
         new HtmlWebpackPlugin({
@@ -33,15 +33,16 @@ export function buildPlugins({
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
             __API__: JSON.stringify(apiUrl),
-            __PROJECT__: JSON.stringify(project)
+            __PROJECT__: JSON.stringify(project),
         }),
         // с помощью него в приложение можно прокидывать глобальные переменные
         new ReactRefreshWebpackPlugin(),
     ]
-    
+
     if (isDev) {
         plugins.push(
             new HotModuleReplacementPlugin(),
+            new ReactRefreshWebpackPlugin(),
             //  плагин по типу Live Server
             // new BundleAnalyzerPlugin({
             //     openAnalyzer: false,
