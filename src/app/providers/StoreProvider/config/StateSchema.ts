@@ -6,6 +6,7 @@ import { Reducer } from "@reduxjs/toolkit";
 import { ProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
 import { NavigateOptions, To } from "react-router-dom";
+import { ArticleDetailsSchema } from "entities/Article";
 
 
 export interface StateSchema {
@@ -13,9 +14,10 @@ export interface StateSchema {
     user: UserSchema
 
     // Асинхронные редюсеры
-    // мы будем подгружать их через reducerManager 
+    // мы будем подгружать их через reducerManager
     loginForm?: LoginSchema
     profile?: ProfileSchema
+    articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
