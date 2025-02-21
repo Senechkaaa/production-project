@@ -97,13 +97,15 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "role": "ADMIN"
+            "role": "ADMIN",
+            "avatar": "https://habrastorage.org/files/9ec/4ea/93a/9ec4ea93ab9a440e8a293a87df6dc303.gif"
         },
         {
             "id": "2",
             "username": "user",
             "password": "123",
-            "role": "ADMUSERN"
+            "role": "ADMUSERN",
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png"
         }
     ],
     "profile": {
