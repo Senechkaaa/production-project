@@ -1,11 +1,21 @@
-import { classNames } from "shared/lib/classNames/classnames"
-import cls from "./ArticlePage.module.scss"
-import { memo } from "react"
-import { Article, ArticleList, ArticleView } from "entities/Article"
+import { ComponentStory, ComponentMeta } from "@storybook/react"
+import { ArticleList } from "./ArticleList"
+import { Article, ArticleView } from "entities/Article/model/types/article"
 
-interface ArticlePageProps {
-    className?: string
-}
+export default {
+    title: "entities/Article/ArticleList",
+    component: ArticleList,
+    argTypes: {
+        backgroundColor: { control: "color" },
+    },
+    args: {
+        to: "/",
+    },
+} as ComponentMeta<typeof ArticleList>
+
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+    <ArticleList {...args} />
+)
 
 const article = {
     id: "1",
@@ -72,15 +82,34 @@ const article = {
     ],
 } as Article
 
-const ArticlePage = ({ className }: ArticlePageProps) => {
-    return (
-        <div className={classNames(cls.ArticlePage, {}, [className])}>
-            <ArticleList
-                view={ArticleView.BIG}
-                articles={[]}
-            />
-        </div>
-    )
+export const isLoadingBig = Template.bind({})
+isLoadingBig.args = {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.BIG,
 }
 
-export default memo(ArticlePage)
+export const isLoadingSmall = Template.bind({})
+isLoadingBig.args = {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.SMALL,
+}
+
+export const ListSmall = Template.bind({})
+ListSmall.args = {
+    isLoading: false,
+    articles: new Array(9)
+        .fill(0)
+        .map((item, index) => ({ ...article, id: String(index) })),
+    view: ArticleView.SMALL,
+}
+
+export const ListBig = Template.bind({})
+ListBig.args = {
+    isLoading: false,
+    articles: new Array(9)
+        .fill(0)
+        .map((item, index) => ({ ...article, id: String(index) })),
+    view: ArticleView.BIG,
+}

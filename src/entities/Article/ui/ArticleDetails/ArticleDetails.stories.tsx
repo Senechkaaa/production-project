@@ -4,7 +4,7 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import { Article, ArticleBlockType, ArticleType } from "entities/Article/model/types/article"
 
 export default {
-    title: "entities/ArticleDetails",
+    title: "entities/Article/ArticleDetails",
     component: ArticleDetails,
     argTypes: {
         backgroundColor: { control: "color" },
@@ -24,6 +24,10 @@ const article: Article = {
     subtitle: "Что нового в JS за 2025 год?",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
     views: 1022,
+    user: {
+        id: "1",
+        username: "Sigam boy",
+    },
     createdAt: "26.01.2025",
     type: [ArticleType.IT],
     blocks: [
