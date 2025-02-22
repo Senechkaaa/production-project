@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classnames"
 import { useTranslation } from "react-i18next"
-import { memo } from "react"
+import { memo, useCallback } from "react"
 import { ArticleDetails } from "entities/Article"
 import { useParams } from "react-router-dom"
 import { Text } from "shared/ui/Text/Text"
@@ -18,6 +18,8 @@ import {
     getArticleComments,
 } from "../../model/slices/articleDetailsCommentsSlice"
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments"
+import { AddCommentForm } from "features/addCommentForm"
+import { addCommentForArticle } from "pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle"
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -38,6 +40,13 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id))
     })
+    
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text))
+        },
+        [dispatch],
+    )
 
     if (!id) {
         return (
@@ -56,6 +65,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             >
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t("Комментарии")} />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}

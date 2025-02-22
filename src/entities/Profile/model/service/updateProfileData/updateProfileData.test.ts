@@ -12,6 +12,7 @@ const data = {
     lastname: "Lolokov",
     country: Country.Canada,
     currency: Currency.USD,
+    id: "1"
 }
 
 

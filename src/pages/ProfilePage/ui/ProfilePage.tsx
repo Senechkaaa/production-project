@@ -13,7 +13,7 @@ import {
     profileReducer,
     ValidateProfileError,
 } from "entities/Profile"
-import { useCallback, useEffect } from "react"
+import { useCallback } from "react"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { getProfileIsLoading } from "entities/Profile"
 import { getProfileError } from "entities/Profile"
@@ -23,6 +23,8 @@ import { Currency } from "entities/Currency"
 import { Country } from "entities/Country"
 import { Text, TextTheme } from "shared/ui/Text/Text"
 import { useTranslation } from "react-i18next"
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
+import { useParams } from "react-router-dom"
 
 interface ProfilePageProps {
     className?: string
@@ -35,6 +37,7 @@ const reducers: ReducersList = {
 const ProfilePage = ({ className }: ProfilePageProps) => {
     const { t } = useTranslation("profile")
     const dispatch = useAppDispatch()
+    const { id } = useParams<{ id: string }>()
     const formData = useSelector(getProfileForm)
     const isLoading = useSelector(getProfileIsLoading)
     const error = useSelector(getProfileError)
@@ -53,11 +56,15 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.NO_DATA]: t("Нет данных"),
     }
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData())
+    console.log("Id не в эффекте", id)
+
+    useInitialEffect(() => {
+        console.log("Нет id")
+        if (id) {
+            console.log("Есть id")
+            dispatch(fetchProfileData(id))
         }
-    }, [dispatch])
+    })
 
     const onChangeFirstName = useCallback(
         (value?: string) => {

@@ -15,7 +15,16 @@ interface CommentListProps {
 export const CommentList = memo((props: CommentListProps) => {
     const { className, comments, isLoading } = props
     const { t } = useTranslation("article-details")
-    console.log("comments:", comments)
+
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.ComponentList, {}, [className])}>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+            </div>
+        )
+    }
 
     return (
         <div className={classNames(cls.ComponentList, {}, [className])}>
