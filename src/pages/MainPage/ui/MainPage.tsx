@@ -2,6 +2,7 @@ import { BugButton } from "app/providers/ErrorBoundary"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Input } from "shared/ui/Input/Input"
+import { Page } from "shared/ui/Page/Page"
 
 const MainPage = () => {
     const { t } = useTranslation()
@@ -12,7 +13,7 @@ const MainPage = () => {
     }
 
     return (
-        <div>
+        <Page>
             <BugButton />
             {t("Главная страница")}
             <Input
@@ -20,7 +21,7 @@ const MainPage = () => {
                 value={value}
                 onChange={onChange}
             />
-        </div>
+        </Page>
     )
 }
 

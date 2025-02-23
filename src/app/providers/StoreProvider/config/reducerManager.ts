@@ -9,33 +9,24 @@ import { ReducerManager, StateSchema, StateSchemaKey } from "./StateSchema"
 export function createReducerManager(
     initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
-    // принимает дефолтные редюсеры
     const reducers = { ...initialReducers }
-
     let combinedReducer = combineReducers(reducers)
-    // Создаем корневой редюсер
-
     let keysToRemove: StateSchemaKey[] = []
-    // хранит названия редюсеров, которые мы хотим удалить
 
     return {
         getReducerMap: () => reducers,
         reduce: (state: StateSchema, action: AnyAction) => {
-            // если есть редюсеры, то удаляет
             if (keysToRemove.length > 0) {
                 state = { ...state }
                 keysToRemove.forEach((key) => {
                     delete state[key]
-                    // удаляем редюсеры
                 })
                 keysToRemove = []
             }
 
             return combinedReducer(state, action)
         },
-
         add: (key: StateSchemaKey, reducer: Reducer) => {
-            //  эта же функция их добавляет
             if (!key || reducers[key]) {
                 return
             }
