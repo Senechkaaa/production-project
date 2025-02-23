@@ -1,4 +1,3 @@
-import { current } from "@reduxjs/toolkit"
 import { MutableRefObject, useEffect, useRef } from "react"
 
 export interface UseInifiteScrolloptions {
@@ -13,9 +12,13 @@ export function useInifiteScroll({
 }: UseInifiteScrolloptions) {
     const observer = useRef<IntersectionObserver | null>(null)
     useEffect(() => {
+        const wrapperElement = wrapperRef.current
+        const triggerElement = triggerRef.current
+        // выносим, чтобы после очищения эффекта не было null в triggerRef и не возникло ошибки на 38 строке
+
         if (callback) {
             const options = {
-                root: wrapperRef.current,
+                root: wrapperElement,
                 // указываем в каком месте следим за обьектом
                 rootMargin: "0px",
                 threshold: 1.0,
@@ -27,12 +30,12 @@ export function useInifiteScroll({
                 }
             }, options)
 
-            observer.current.observe(triggerRef.current)
+            observer.current.observe(triggerElement)
             // указываем, за каким элементом следим
 
             return () => {
-                if (observer.current) {
-                    observer.current.unobserve(triggerRef.current)
+                if (observer.current && triggerElement) {
+                    observer.current.unobserve(triggerElement)
                 }
             }
         }
