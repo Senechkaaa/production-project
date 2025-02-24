@@ -5,7 +5,6 @@ import { LoginSchema } from "features/AuthByUsername";
 import { Reducer } from "@reduxjs/toolkit";
 import { ProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
-import { NavigateOptions, To } from "react-router-dom";
 import { ArticleDetailsSchema } from "entities/Article";
 import { ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
 import { AddComentFormSchema } from "features/addCommentForm";
@@ -29,12 +28,18 @@ export interface StateSchema {
 
 export type StateSchemaKey = keyof StateSchema
 // получаем название схем - ключей
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>
-    reduce: ( state: StateSchema, action: AnyAction) => CombinedState<StateSchema>,
+    reduce: (
+        state: StateSchema,
+        action: AnyAction,
+    ) => CombinedState<StateSchema>
     add: (key: StateSchemaKey, reducer: Reducer) => void
     remove: (key: StateSchemaKey) => void
+    //  true - reducer монтирован, false - reducer не в монтирован или уже анмонтирован
+    getMountedReducers: () => MountedReducers
 }
 
 
@@ -45,7 +50,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface ThunkConfig<T> {

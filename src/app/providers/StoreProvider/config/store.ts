@@ -4,12 +4,11 @@ import { counterReducer } from "entities/Counter"
 import { userReducer } from "entities/User"
 import { createReducerManager } from "./reducerManager"
 import { $api } from "shared/api/api"
-import { NavigateOptions, To } from "react-router-dom"
+// import { NavigateOptions, To } from "react-router-dom"
 
 export function createReduxStore(
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void,
     // asyncReducers для того, чтобы можно было рабоать сторибуку с асинхронными редюсерами
 ) {
     const rootReducers: ReducersMapObject<StateSchema> = {
@@ -23,8 +22,6 @@ export function createReduxStore(
 
     const extraArg: ThunkExtraArg = {
         api: $api,
-        navigate,
-        //  thunkAPI.extra.navigate
     }
 
     const store = configureStore({
@@ -40,6 +37,8 @@ export function createReduxStore(
             }),
         // настройка для запросов thunkAPI.extra.api.post()
     })
+
+    console.log('render')
 
     // @ts-expect-error@typescript-eslint/ban-ts-comment
     store.reducerManager = reducerManager

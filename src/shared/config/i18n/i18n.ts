@@ -11,7 +11,8 @@ i18n.use(Backend)
     .init({
         fallbackLng: 'ru',
         // язык по умолчанию
-        debug: __IS_DEV__ ? true : false,
+        // debug: __IS_DEV__ ? true : false,
+        debug: false,
         // будет в консоль писать подгрузку перевод, отсутствующие ключи
 
         interpolation: {

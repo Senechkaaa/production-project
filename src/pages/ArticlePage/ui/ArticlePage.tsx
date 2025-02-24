@@ -13,7 +13,6 @@ import {
 } from "../model/slices/articlePageSlice"
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
-import { fetchArticlesList } from "../model/services/fetchArticleList/fetchArticleList"
 import { useSelector } from "react-redux"
 import {
     getArticlesPageError,
@@ -23,6 +22,7 @@ import {
 import { Page } from "shared/ui/Page/Page"
 import { fetchNextArticlePage } from "../model/services/fetchNextArticlesPage/fetchNextArticlesPage"
 import { Text } from "shared/ui/Text/Text"
+import { initArticlesPage } from "../model/services/initArticlePage/initArticlePage"
 
 interface ArticlePageProps {
     className?: string
@@ -51,36 +51,28 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     }, [dispatch])
 
     useInitialEffect(() => {
-        dispatch(articlesPageActions.initState())
-        dispatch(
-            fetchArticlesList({
-                page: 1,
-            }),
-        )
+        dispatch(initArticlesPage())
     })
 
     if (error) {
-        <Text title="Error was occured"/>
+        ;<Text title="Error was occured" />
     }
 
-        return (
-            <DynamicModuleLoader reducers={reducers}>
-                <Page
-                    onScrollEnd={onLoadNextPart}
-                    className={classNames(cls.ArticlePage, {}, [className])}
-                >
-                    <ArticleViewSelector
-                        view={view}
-                        onViewClick={onChangeView}
-                    />
-                    <ArticleList
-                        isLoading={isLoading}
-                        view={view}
-                        articles={articles}
-                    />
-                </Page>
-            </DynamicModuleLoader>
-        )
+    return (
+        <DynamicModuleLoader reducers={reducers}>
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls.ArticlePage, {}, [className])}
+            >
+                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticleList
+                    isLoading={isLoading}
+                    view={view}
+                    articles={articles}
+                />
+            </Page>
+        </DynamicModuleLoader>
+    )
 }
 
 export default memo(ArticlePage)

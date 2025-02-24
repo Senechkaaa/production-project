@@ -4,7 +4,7 @@ import {
     Reducer,
     ReducersMapObject,
 } from "@reduxjs/toolkit"
-import { ReducerManager, StateSchema, StateSchemaKey } from "./StateSchema"
+import { MountedReducers, ReducerManager, StateSchema, StateSchemaKey } from "./StateSchema"
 
 export function createReducerManager(
     initialReducers: ReducersMapObject<StateSchema>,
@@ -12,9 +12,12 @@ export function createReducerManager(
     const reducers = { ...initialReducers }
     let combinedReducer = combineReducers(reducers)
     let keysToRemove: StateSchemaKey[] = []
+    const mounterReducers: MountedReducers = {}
 
     return {
         getReducerMap: () => reducers,
+        // можно не делать getMountedReducers, а использовать getReducerMap
+        getMountedReducers: () => mounterReducers,
         reduce: (state: StateSchema, action: AnyAction) => {
             if (keysToRemove.length > 0) {
                 state = { ...state }
@@ -31,6 +34,8 @@ export function createReducerManager(
                 return
             }
             reducers[key] = reducer
+            mounterReducers[key] = true
+            // указываем, что вмонтирован редюсер
             combinedReducer = combineReducers(reducers)
         },
 
@@ -41,6 +46,9 @@ export function createReducerManager(
             delete reducers[key]
             keysToRemove.push(key)
             // добавляет ключ в массив и удаляет редюсер
+
+            mounterReducers[key] = false
+            // указываем, что анмонтирован редюсер
             combinedReducer = combineReducers(reducers)
         },
     }

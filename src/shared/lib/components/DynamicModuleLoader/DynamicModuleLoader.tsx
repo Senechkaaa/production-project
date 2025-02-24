@@ -15,20 +15,25 @@ interface DynamicModuleLoaderProps {
     // пропс - будем ли мы удалять компонент посел анмаунта
 }
 
-export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (
-    props,
-) => {
+export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const { children, reducers, removeAfterUnmount } = props
     const store = useStore() as ReduxStoreWithManager
     // useStore достает основной store из store.ts
     const dispatch = useDispatch()
     useEffect(() => {
+        const mounterReducers = store.reducerManager.getMountedReducers()
+        // получаем редюсерс
+
         Object.entries(reducers).forEach(
             // бегаем по reducers и добавляем их
             ([name, reducer]) => {
-                store.reducerManager.add(name as StateSchemaKey, reducer)
-                // при моунте компонента, добавляем reducers, а именно - loginreducer
-                dispatch({ type: `@INIT ${name} reducer` })
+                const mounted = mounterReducers[name as StateSchemaKey]
+                // достаем его, если он есть, то он вмонитрован. Если его нет, то добавляем новый редюсер
+                if (!mounted) {
+                    store.reducerManager.add(name as StateSchemaKey, reducer)
+                    // при моунте компонента, добавляем reducers, а именно - loginreducer
+                    dispatch({ type: `@INIT ${name} reducer` })
+                }
             },
         )
 

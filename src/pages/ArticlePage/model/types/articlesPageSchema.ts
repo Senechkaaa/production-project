@@ -4,7 +4,7 @@ import { Article, ArticleView } from "entities/Article"
 export interface ArticlePageSchema extends EntityState<Article> {
     isLoading?: boolean
     error?: string
-    view: ArticleView,
+    view: ArticleView
 
     // pagination
     page: number
@@ -13,4 +13,7 @@ export interface ArticlePageSchema extends EntityState<Article> {
     // Entity включает в себя:
     //  ids: []
     // entities: {}
+
+    _inited: boolean
+    // Флаг инитед делает так, чтобы после того как мы зашли на статью и вернулись к списку не проходил запрос заново
 }
