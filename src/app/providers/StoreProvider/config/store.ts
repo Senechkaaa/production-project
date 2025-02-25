@@ -4,6 +4,7 @@ import { counterReducer } from "entities/Counter"
 import { userReducer } from "entities/User"
 import { createReducerManager } from "./reducerManager"
 import { $api } from "shared/api/api"
+import { uiReducer } from "features/UI"
 // import { NavigateOptions, To } from "react-router-dom"
 
 export function createReduxStore(
@@ -15,6 +16,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        ui: uiReducer
     }
     // тут храним только обязательные редюсеры
 

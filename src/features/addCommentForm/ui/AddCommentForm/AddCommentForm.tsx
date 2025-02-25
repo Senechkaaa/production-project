@@ -10,7 +10,7 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import { useSelector } from "react-redux"
 import {
-    getAddCommentFormError,
+    // getAddCommentFormError,
     getAddCommentFormText,
 } from "../../model/selectors/addCommentFormSelectors"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
@@ -32,7 +32,7 @@ const AddCommentForm = memo(
     ({ className, onSendComment }: AddCommentFormProps) => {
         const { t } = useTranslation("article-details")
         const text = useSelector(getAddCommentFormText)
-        const error = useSelector(getAddCommentFormError)
+        // const error = useSelector(getAddCommentFormError)
         const dispatch = useAppDispatch()
 
         const onCommentTextChange = useCallback(

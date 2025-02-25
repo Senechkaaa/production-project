@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next"
-import { Page } from "shared/ui/Page/Page"
+import { Page } from "widgets/Page/Page"
 
 const AboutPage = () => {
-    const { t } = useTranslation('about')
+    const { t } = useTranslation("about")
 
-    return <Page>{t('О сайте')}</Page>
+    return <Page>{t("О сайте")}</Page>
 }
 
 export default AboutPage

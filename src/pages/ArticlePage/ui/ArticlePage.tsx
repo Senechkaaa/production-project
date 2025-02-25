@@ -19,7 +19,7 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from "../model/selectors/articlesPageSelector"
-import { Page } from "shared/ui/Page/Page"
+import { Page } from "widgets/Page/Page"
 import { fetchNextArticlePage } from "../model/services/fetchNextArticlesPage/fetchNextArticlesPage"
 import { Text } from "shared/ui/Text/Text"
 import { initArticlesPage } from "../model/services/initArticlePage/initArticlePage"

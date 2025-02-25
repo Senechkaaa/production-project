@@ -9,13 +9,14 @@ import { ArticleDetailsSchema } from "entities/Article";
 import { ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
 import { AddComentFormSchema } from "features/addCommentForm";
 import { ArticlePageSchema } from "pages/ArticlePage";
+import { UISchema } from "features/UI";
 
 
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
-
+    ui: UISchema,
     // Асинхронные редюсеры
     // мы будем подгружать их через reducerManager
     loginForm?: LoginSchema

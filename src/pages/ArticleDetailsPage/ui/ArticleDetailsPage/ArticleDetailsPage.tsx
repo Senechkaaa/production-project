@@ -22,7 +22,7 @@ import { AddCommentForm } from "features/addCommentForm"
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle"
 import { Button } from "shared/ui/Button/Button"
 import { RoutesPath } from "shared/config/routeConfig/routeConfig"
-import { Page } from "shared/ui/Page/Page"
+import { Page } from "widgets/Page/Page"
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -44,7 +44,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id))
     })
-    
+
     const onSendComment = useCallback(
         (text: string) => {
             dispatch(addCommentForArticle(text))
@@ -71,7 +71,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-                <Button onClick={onBackToList}>{t('Назад к списку')}</Button>
+                <Button onClick={onBackToList}>{t("Назад к списку")}</Button>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t("Комментарии")} />
                 <AddCommentForm onSendComment={onSendComment} />
