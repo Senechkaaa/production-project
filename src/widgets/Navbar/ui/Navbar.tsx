@@ -6,6 +6,9 @@ import { useTranslation } from "react-i18next"
 import { LoginModal } from "features/AuthByUsername"
 import { useDispatch, useSelector } from "react-redux"
 import { getUserAuthData, userActions } from "entities/User"
+import { Text, TextTheme } from "shared/ui/Text/Text"
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink"
+import { RoutesPath } from "shared/config/routeConfig/routeConfig"
 
 interface NavbarProps {
     className?: string
@@ -32,6 +35,10 @@ export const NavBar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
+                <Text theme={TextTheme.INVERTED} className={cls.appName} title={t("Сигмаааа")}/>
+                <AppLink className={cls.createBtn} theme={AppLinkTheme.SECONDARY} to={RoutesPath.article_create}>
+                    {t("Создать статью")}
+                </AppLink>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
                     onClick={onLogout}

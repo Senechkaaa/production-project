@@ -26,6 +26,7 @@ import { getArticleRecommendation } from "../../model/slices/articleDetailsPageR
 import { getArticleRecommendationsIsLoading } from "pages/ArticleDetailsPage/model/selectors/recommendations"
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations"
 import { articleDetailsReducer } from "../../model/slices"
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -44,7 +45,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const recommendations = useSelector(getArticleRecommendation.selectAll)
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading)
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
-    const navigate = useNavigate()
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id))
@@ -58,9 +58,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         [dispatch],
     )
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutesPath.articles)
-    }, [navigate])
 
     if (!id) {
         return (
@@ -77,7 +74,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-                <Button onClick={onBackToList}>{t("Назад к списку")}</Button>
+                <ArticleDetailsPageHeader/>
                 <ArticleDetails id={id} />
                 <Text size={TextSize.L} className={cls.commentTitle} title={t("Рекомендуем")} />
                 <ArticleList className={cls.recommendations} view={ArticleView.SMALL}  articles={recommendations} isLoading={recommendationsIsLoading}/>
