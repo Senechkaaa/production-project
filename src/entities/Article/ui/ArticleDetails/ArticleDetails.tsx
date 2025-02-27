@@ -6,7 +6,7 @@ import {
     ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice"
-import { memo, useCallback, useEffect } from "react"
+import { memo, useCallback } from "react"
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { useSelector } from "react-redux"

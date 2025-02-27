@@ -2,6 +2,7 @@ import { useCallback, useRef } from "react"
 
 // тротлинг позволяет оптимизировать события, которые вызываются часто
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export function useThrottle(callback: (...args: any[]) => void, delay: number) {
     const throttleRef = useRef(false)
     // UseRef используем потому, что они позволяют сохранять значение между рендерами компонента.

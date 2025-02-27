@@ -6,7 +6,7 @@ import { RoutesPath } from "shared/config/routeConfig/routeConfig"
 import { useNavigate } from "react-router-dom"
 import { Button } from "shared/ui/Button/Button"
 import { useSelector } from "react-redux"
-import { getUserAuthData } from "entities/User"
+// import { getUserAuthData } from "entities/User"
 import { getArticleDetailsData } from "entities/Article/model/selectors/articleDetails"
 import { getCanEditArticle } from "pages/ArticleDetailsPage/model/selectors/article"
 
@@ -18,7 +18,7 @@ export const ArticleDetailsPageHeader = memo(
     ({ className }: ArticleDetailsPageHeaderProps) => {
         const { t } = useTranslation()
         const navigate = useNavigate()
-        const userData = useSelector(getUserAuthData)
+        // const userData = useSelector(getUserAuthData)
         const article = useSelector(getArticleDetailsData)
         const canEdit = useSelector(getCanEditArticle)
 

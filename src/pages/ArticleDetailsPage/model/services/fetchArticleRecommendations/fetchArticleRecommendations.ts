@@ -1,10 +1,6 @@
-// fetchArticleRecommendations
-
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { ThunkConfig } from "app/providers/StoreProvider"
 import { Article } from "entities/Article"
-import { addQueryParams } from "shared/lib/url/addQueryParams/addQueryParams"
-import { ArticleType } from "entities/Article/model/types/article"
 
 export const fetchArticleRecommendations = createAsyncThunk<
     Article[],
@@ -29,6 +25,7 @@ export const fetchArticleRecommendations = createAsyncThunk<
 
             return response.data
         } catch (e) {
+            console.log(e)
             return rejectWithValue("error")
         }
     },

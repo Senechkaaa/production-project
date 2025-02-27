@@ -1,7 +1,7 @@
 import { classNames } from "shared/lib/classNames/classnames"
 import cls from "./ArticleListItem.module.scss"
 import { useTranslation } from "react-i18next"
-import { HTMLAttributeAnchorTarget, memo, useCallback } from "react"
+import { HTMLAttributeAnchorTarget, memo } from "react"
 import {
     Article,
     ArticleBlockType,

@@ -9,6 +9,7 @@ import { BuildOptions } from "./types/config"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 // import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
+import CopyPlugin from 'copy-webpack-plugin'
 
 export function buildPlugins({
     paths,
@@ -37,6 +38,13 @@ export function buildPlugins({
         }),
         // с помощью него в приложение можно прокидывать глобальные переменные
         new ReactRefreshWebpackPlugin(),
+
+        // плагин чтобы перенести наши переводы в сборку проекта
+        new CopyPlugin({
+            patterns: [
+                { from: paths.locales, to: paths.buildLocales },
+            ],
+        }),
     ]
 
     if (isDev) {
