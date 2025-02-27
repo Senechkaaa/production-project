@@ -1,9 +1,15 @@
-import { LOCAL_STORAGE_THEME_KEY } from "app/providers/ThemeProvider/lib/ThemeContext";
-import axios from "axios";
+import { LOCAL_STORAGE_THEME_KEY } from "app/providers/ThemeProvider/lib/ThemeContext"
+import axios from "axios"
 
 export const $api = axios.create({
     baseURL: __API__,
-    headers: {
-        authorization: localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || '',
-    },
+})
+
+$api.interceptors.request.use((config) => {
+    if (config.headers) {
+        config.headers.Authorization = localStorage.getItem(
+            LOCAL_STORAGE_THEME_KEY,
+        ) || ''
+    }
+    return config
 })
