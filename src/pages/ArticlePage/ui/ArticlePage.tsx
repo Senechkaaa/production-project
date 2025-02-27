@@ -1,13 +1,12 @@
 import { classNames } from "shared/lib/classNames/classnames"
 import cls from "./ArticlePage.module.scss"
 import { memo, useCallback } from "react"
-import { ArticleList, ArticleView, ArticleViewSelector } from "entities/Article"
+import { ArticleList} from "entities/Article"
 import {
     DynamicModuleLoader,
     ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import {
-    articlesPageActions,
     articlesPageReducer,
     getArticles,
 } from "../model/slices/articlePageSlice"
@@ -23,6 +22,8 @@ import { Page } from "widgets/Page/Page"
 import { fetchNextArticlePage } from "../model/services/fetchNextArticlesPage/fetchNextArticlesPage"
 import { Text } from "shared/ui/Text/Text"
 import { initArticlesPage } from "../model/services/initArticlePage/initArticlePage"
+import { ArticlesPageFilters } from "./ArticlesPageFilters/ArticlesPageFilters"
+import { useSearchParams } from "react-router-dom"
 
 interface ArticlePageProps {
     className?: string
@@ -38,20 +39,15 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     const isLoading = useSelector(getArticlesPageIsLoading)
     const view = useSelector(getArticlesPageView)
     const error = useSelector(getArticlesPageError)
-
-    const onChangeView = useCallback(
-        (view: ArticleView) => {
-            dispatch(articlesPageActions.setView(view))
-        },
-        [dispatch],
-    )
+    const [searchParams] = useSearchParams()
+    
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage())
     }, [dispatch])
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage())
+        dispatch(initArticlesPage(searchParams))
     })
 
     if (error) {
@@ -64,8 +60,9 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlePage, {}, [className])}
             >
-                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticlesPageFilters />
                 <ArticleList
+                    className={cls.list}
                     isLoading={isLoading}
                     view={view}
                     articles={articles}

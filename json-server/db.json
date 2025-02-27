@@ -38,10 +38,10 @@
             "title": "Python Лучший язык?",
             "subtitle": "Python В наше время ",
             "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-            "views": 18019,
+            "views": 102342,
             "createdAt": "02.02.2025",
             "userId": "1",
-            "type": ["IT"],
+            "type": ["ECONOMICS"],
             "blocks": [
                 {
                     "id": "1",
@@ -55,13 +55,13 @@
         },
         {
             "id": "4",
-            "title": "Javascript news",
+            "title": "Kotlin новая Java",
             "subtitle": "Что нового в JS за 2025 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-            "views": 1022,
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGeyRWIrFlmmtuAzjub6qNKOx9Ub3jESPG9w&s",
+            "views": 984023,
             "createdAt": "26.01.2025",
             "userId": "1",
-            "type": ["IT"],
+            "type": ["ECONOMICS"],
             "blocks": [
                 {
                     "id": "1",
@@ -76,13 +76,13 @@
         },
         {
             "id": "5",
-            "title": "Python Лучший язык?",
+            "title": "Kotlin стал лучше java",
             "subtitle": "Python В наше время ",
-            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-            "views": 18019,
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGeyRWIrFlmmtuAzjub6qNKOx9Ub3jESPG9w&s",
+            "views": 102,
             "createdAt": "02.02.2025",
             "userId": "1",
-            "type": ["IT"],
+            "type": ["SCIENCE"],
             "blocks": [
                 {
                     "id": "1",
@@ -97,13 +97,13 @@
 
         {
             "id": "6",
-            "title": "Javascript news",
-            "subtitle": "Что нового в JS за 2025 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-            "views": 1022,
+            "title": "Ruby хорош?",
+            "subtitle": "актуален ли Ruby в 2025",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/800px-Ruby_logo.svg.png",
+            "views": 930,
             "createdAt": "26.01.2025",
             "userId": "1",
-            "type": ["IT"],
+            "type": ["ALL"],
             "blocks": [
                 {
                     "id": "1",
@@ -118,10 +118,10 @@
         },
         {
             "id": "7",
-            "title": "Python Лучший язык?",
-            "subtitle": "Python В наше время ",
-            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-            "views": 18019,
+            "title": "Golang супер скорость?",
+            "subtitle": "Golang лучший для новичков?",
+            "img": "https://blog.skillfactory.ru/wp-content/uploads/2023/02/image2-8611380.png",
+            "views": 22214,
             "createdAt": "02.02.2025",
             "userId": "1",
             "type": ["IT"],
@@ -139,10 +139,10 @@
 
         {
             "id": "8",
-            "title": "Javascript news",
-            "subtitle": "Что нового в JS за 2025 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-            "views": 1022,
+            "title": "Создатель C++",
+            "subtitle": "Кто и когда создал c++",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png",
+            "views": 32,
             "createdAt": "26.01.2025",
             "userId": "1",
             "type": ["IT"],
@@ -160,13 +160,13 @@
         },
         {
             "id": "9",
-            "title": "Python Лучший язык?",
-            "subtitle": "Python В наше время ",
-            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-            "views": 18019,
+            "title": "C",
+            "subtitle": "Настолько низкоуравнивый",
+            "img": "https://banner2.cleanpng.com/20180405/doe/avgjobs91.webp",
+            "views": 672,
             "createdAt": "02.02.2025",
             "userId": "1",
-            "type": ["IT"],
+            "type": ["SCIENCE"],
             "blocks": [
                 {
                     "id": "1",
@@ -181,10 +181,10 @@
 
         {
             "id": "10",
-            "title": "Javascript news",
-            "subtitle": "Что нового в JS за 2025 год?",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-            "views": 1022,
+            "title": "Стоит ли учить С#",
+            "subtitle": "Все сервера написаны на нем",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5huhL1Lgv0HgfUP01C12fMLQPWclPu8wgTg&s",
+            "views": 96812,
             "createdAt": "26.01.2025",
             "userId": "1",
             "type": ["IT"],
@@ -202,13 +202,13 @@
         },
         {
             "id": "11",
-            "title": "Python Лучший язык?",
-            "subtitle": "Python В наше время ",
-            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-            "views": 18019,
+            "title": "Assembly полная ж?",
+            "subtitle": "ЯП, который вынесет твой мозг",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYrAZc4JAnHsc0i1h7ojvE9b3GtPE7jOjOQ&s",
+            "views": 1,
             "createdAt": "02.02.2025",
             "userId": "1",
-            "type": ["IT"],
+            "type": ["SCIENCE"],
             "blocks": [
                 {
                     "id": "1",
@@ -226,7 +226,7 @@
             "title": "Javascript news",
             "subtitle": "Что нового в JS за 2025 год?",
             "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-            "views": 1022,
+            "views": 483,
             "createdAt": "26.01.2025",
             "userId": "1",
             "type": ["IT"],
