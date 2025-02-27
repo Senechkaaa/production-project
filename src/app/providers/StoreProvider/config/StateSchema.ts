@@ -6,7 +6,7 @@ import { Reducer } from "@reduxjs/toolkit";
 import { ProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entities/Article";
-import { ArticleDetailsCommentSchema } from "pages/ArticleDetailsPage";
+import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
 import { AddComentFormSchema } from "features/addCommentForm";
 import { ArticlePageSchema } from "pages/ArticlePage";
 import { UISchema } from "features/UI";
@@ -16,13 +16,14 @@ import { UISchema } from "features/UI";
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
-    ui: UISchema,
+    ui: UISchema
+
     // Асинхронные редюсеры
     // мы будем подгружать их через reducerManager
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleDetailsComments?: ArticleDetailsCommentSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
     addCommentForm?: AddComentFormSchema
     articlesPage?: ArticlePageSchema
 }

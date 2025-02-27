@@ -1,7 +1,7 @@
 import { classNames } from "shared/lib/classNames/classnames"
 import cls from "./ArticlePage.module.scss"
 import { memo, useCallback } from "react"
-import { ArticleList} from "entities/Article"
+import { ArticleList } from "entities/Article"
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -40,7 +40,6 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     const view = useSelector(getArticlesPageView)
     const error = useSelector(getArticlesPageError)
     const [searchParams] = useSearchParams()
-    
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage())
@@ -51,7 +50,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     })
 
     if (error) {
-        ;<Text title="Error was occured" />
+        <Text title="Error was occured" />
     }
 
     return (
@@ -62,6 +61,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
             >
                 <ArticlesPageFilters />
                 <ArticleList
+                    target="_blank"
                     className={cls.list}
                     isLoading={isLoading}
                     view={view}
