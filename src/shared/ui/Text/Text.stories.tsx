@@ -70,3 +70,10 @@ SizeM.args = {
     text: "Description lorem ipsum",
     size: TextSize.M,
 }
+
+export const SizeS = Template.bind({})
+SizeS.args = {
+    title: "Title lorem ipsum",
+    text: "Description lorem ipsum",
+    size: TextSize.S,
+}
