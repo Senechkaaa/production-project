@@ -25,10 +25,10 @@ const directionClasses: Record<FlexDirection, string> = {
     row: cls.directionRow,
 }
 
-type DivProps = DetailedHTMLProps<
-    HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
->
+// type DivProps = DetailedHTMLProps<
+//     HTMLAttributes<HTMLDivElement>,
+//     HTMLDivElement
+// >
 const gapClasses: Record<FlexGap, string> = {
     4: cls.gap4,
     8: cls.gap8,
@@ -36,7 +36,7 @@ const gapClasses: Record<FlexGap, string> = {
     32: cls.gap32,
 }
 
-export interface FlexProps extends DivProps {
+export interface FlexProps {
     className?: string
     children: ReactNode
     justify?: FlexJustify
