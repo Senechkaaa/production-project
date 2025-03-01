@@ -18,10 +18,11 @@ import {
     addCommentFormActions,
     addCommentFormReducer,
 } from "../../model/slices/addCommentFormSlice"
+import { HStack } from "shared/ui/Stack/Flex"
 
 export interface AddCommentFormProps {
     className?: string
-    onSendComment: (text: string) => void;
+    onSendComment: (text: string) => void
 }
 
 const reducers: ReducersList = {
@@ -43,13 +44,15 @@ const AddCommentForm = memo(
         )
 
         const onSendHandler = useCallback(() => {
-            onSendComment(text || '')
+            onSendComment(text || "")
             onCommentTextChange("")
         }, [onSendComment, text, onCommentTextChange])
 
         return (
             <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-                <div
+                <HStack
+                    justify="between"
+                    max
                     className={classNames(cls.AddCommentForm, {}, [className])}
                 >
                     <Input
@@ -61,7 +64,7 @@ const AddCommentForm = memo(
                     <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE}>
                         {t("Отправить")}
                     </Button>
-                </div>
+                </HStack>
             </DynamicModuleLoader>
         )
     },

@@ -2,7 +2,7 @@ import { classNames } from "shared/lib/classNames/classnames"
 import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
 import { ArticleDetails, ArticleList, ArticleView } from "entities/Article"
-import {  useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { Text, TextSize } from "shared/ui/Text/Text"
 import { CommentList } from "entities/Comment"
 import {
@@ -13,9 +13,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId"
 import cls from "./ArticleDetailsPage.module.scss"
-import {
-    getArticleComments,
-} from "../../model/slices/articleDetailsCommentsSlice"
+import { getArticleComments } from "../../model/slices/articleDetailsCommentsSlice"
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments"
 import { AddCommentForm } from "features/addCommentForm"
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle"
@@ -25,6 +23,7 @@ import { getArticleRecommendationsIsLoading } from "pages/ArticleDetailsPage/mod
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations"
 import { articleDetailsReducer } from "../../model/slices"
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
+import { VStack } from "shared/ui/Stack/Flex"
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -41,7 +40,9 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const dispatch = useDispatch()
     const comments = useSelector(getArticleComments.selectAll)
     const recommendations = useSelector(getArticleRecommendation.selectAll)
-    const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading)
+    const recommendationsIsLoading = useSelector(
+        getArticleRecommendationsIsLoading,
+    )
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading)
 
     useInitialEffect(() => {
@@ -55,7 +56,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         },
         [dispatch],
     )
-
 
     if (!id) {
         return (
@@ -72,16 +72,30 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-                <ArticleDetailsPageHeader/>
-                <ArticleDetails id={id} />
-                <Text size={TextSize.L} className={cls.commentTitle} title={t("Рекомендуем")} />
-                <ArticleList className={cls.recommendations} view={ArticleView.SMALL}  articles={recommendations} isLoading={recommendationsIsLoading}/>
-                <Text className={cls.commentTitle} title={t("Комментарии")} />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentList
-                    isLoading={commentsIsLoading}
-                    comments={comments}
-                />
+                <VStack gap="16" max>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <Text
+                        size={TextSize.L}
+                        className={cls.commentTitle}
+                        title={t("Рекомендуем")}
+                    />
+                    <ArticleList
+                        className={cls.recommendations}
+                        view={ArticleView.SMALL}
+                        articles={recommendations}
+                        isLoading={recommendationsIsLoading}
+                    />
+                    <Text
+                        className={cls.commentTitle}
+                        title={t("Комментарии")}
+                    />
+                    <AddCommentForm onSendComment={onSendComment} />
+                    <CommentList
+                        isLoading={commentsIsLoading}
+                        comments={comments}
+                    />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     )

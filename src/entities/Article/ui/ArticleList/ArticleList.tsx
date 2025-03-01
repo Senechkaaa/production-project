@@ -45,7 +45,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         ? articles.length
         : Math.ceil(articles.length / itemsPerRow)
 
-    const rowRender = ({ index, isScrolling, key, style }: ListRowProps) => {
+    const rowRender = ({ index, key, style }: ListRowProps) => {
         const items = []
         const fromIndex = index * itemsPerRow
         const toIndex = Math.min(fromIndex + itemsPerRow, articles.length)
