@@ -1,6 +1,7 @@
 import { BugButton } from "app/providers/ErrorBoundary"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
+import { DropDown } from "shared/ui/DropDown/DropDown"
 import { Input } from "shared/ui/Input/Input"
 import { ListBox } from "shared/ui/ListBox/ListBox"
 import { HStack } from "shared/ui/Stack/Flex"
@@ -18,23 +19,6 @@ const MainPage = () => {
         <Page>
             <BugButton />
             {t("Главная страница")}
-            <div>fdsfddsf</div>
-            <HStack>
-                <div>fdfdssdf</div>
-                <ListBox
-                    defaultValue={"Выберите значение"}
-                    onChange={(value: string) => {}}
-                    value={undefined}
-                    items={[
-                        { value: "1", content: "123" },
-                        { value: "2", content: "xcvcxv", disabled: true,},
-                        { value: "3", content: "fdssdf" },
-                    ]}
-                />
-            </HStack>
-            <div>fdsfddsf</div>
-            <div>fdsfddsf</div>
-            <div>fdsfddsf</div>
             <Input
                 placeholder="Введите текст"
                 value={value}

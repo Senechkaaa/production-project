@@ -9,6 +9,8 @@ import { getUserAuthData, userActions } from "entities/User"
 import { Text, TextTheme } from "shared/ui/Text/Text"
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink"
 import { RoutesPath } from "shared/config/routeConfig/routeConfig"
+import { DropDown } from "shared/ui/DropDown/DropDown"
+import { Avatar } from "shared/ui/Avatar/Avatar"
 
 interface NavbarProps {
     className?: string
@@ -35,17 +37,33 @@ export const NavBar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
-                <Text theme={TextTheme.INVERTED} className={cls.appName} title={t("Сигмаааа")}/>
-                <AppLink className={cls.createBtn} theme={AppLinkTheme.SECONDARY} to={RoutesPath.article_create}>
+                <Text
+                    theme={TextTheme.INVERTED}
+                    className={cls.appName}
+                    title={t("Сигмаааа")}
+                />
+                <AppLink
+                    className={cls.createBtn}
+                    theme={AppLinkTheme.SECONDARY}
+                    to={RoutesPath.article_create}
+                >
                     {t("Создать статью")}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    onClick={onLogout}
-                    className={cls.links}
-                >
-                    {t("Выйти")}
-                </Button>
+                <DropDown
+                    direction="bottom left"
+                    className={cls.dropdown}
+                    items={[
+                        {
+                            content: t("Выйти"),
+                            onClick: onLogout,
+                        },
+                        {
+                            content: t("Профиль"),
+                            href: RoutesPath.profile + authData.id
+                        },
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                />
                 <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             </header>
         )
@@ -61,7 +79,9 @@ export const NavBar = memo(({ className }: NavbarProps) => {
                 {t("Войти")}
             </Button>
             {/* для оптимизации и чтобы не был лишнем в дом дереве */}
-            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
         </header>
     )
 })

@@ -4,14 +4,13 @@ import cls from "./ListBox.module.scss"
 import { classNames } from "shared/lib/classNames/classnames"
 import { Button } from "../Button/Button"
 import { HStack } from "../Stack/Flex"
+import { DropDownDirection } from "../../types/ui"
 
 export interface ListBoxItem {
     value: string
     content: ReactNode
     disabled?: boolean
 }
-
-type DropDownDirection = "top" | "bottom"
 
 interface ListBoxProps {
     items?: ListBoxItem[]
@@ -20,23 +19,33 @@ interface ListBoxProps {
     defaultValue?: string
     onChange: (value: string) => void
     readonly?: boolean
-    direction?: DropDownDirection,
+    direction?: DropDownDirection
     label?: string
 }
 
 const mapDirectionClass: Record<DropDownDirection, string> = {
-    bottom: cls.optionBottom,
-    top: cls.optionTop,
+    "bottom left": cls.optionBottomLeft,
+    "bottom right": cls.optionBottomRight,
+    "top left": cls.optionTopLeft,
+    "top right": cls.optionTopRight,
 }
 
-
 export const ListBox = (props: ListBoxProps) => {
-    const { className, items, defaultValue, onChange, value, readonly, direction = "bottom", label } = props
+    const {
+        className,
+        items,
+        defaultValue,
+        onChange,
+        value,
+        readonly,
+        direction = "bottom left",
+        label,
+    } = props
 
     const optionsClasses = mapDirectionClass[direction]
     return (
         <HStack gap="4">
-            {label && <span >{label + ">"}</span>}
+            {label && <span>{label + ">"}</span>}
             <HListBox
                 disabled={readonly}
                 as={"div"}
