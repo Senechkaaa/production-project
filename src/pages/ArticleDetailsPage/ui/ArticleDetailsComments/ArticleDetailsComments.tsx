@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classnames"
 import { useTranslation } from "react-i18next"
-import { memo, useCallback } from "react"
+import { memo, Suspense, useCallback } from "react"
 import { AddCommentForm } from "features/addCommentForm"
 import { CommentList } from "entities/Comment"
 import { Text } from "shared/ui/Text/Text"
@@ -12,10 +12,11 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId"
 import { VStack } from "shared/ui/Stack/Flex"
+import { Loader } from "shared/ui/Loader/Loader"
 
 interface ArticleDetailsCommentsProps {
     className?: string
-    id: string
+    id?: string
 }
 
 export const ArticleDetailsComments = memo(
@@ -40,7 +41,9 @@ export const ArticleDetailsComments = memo(
         return (
             <VStack gap="16" max className={classNames("", {}, [className])}>
                 <Text title={t("Комментарии")} />
-                <AddCommentForm onSendComment={onSendComment} />
+                <Suspense fallback={<Loader />}>
+                    <AddCommentForm onSendComment={onSendComment} />
+                </Suspense>
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}

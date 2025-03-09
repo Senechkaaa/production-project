@@ -1,7 +1,11 @@
-import { Story } from '@storybook/react'
-import { BrowserRouter } from 'react-router-dom'
+import { Story } from "@storybook/react"
+import { BrowserRouter } from "react-router-dom"
 
-export const RouterDecorator = (story: () => Story) => {
-    return <BrowserRouter>{story()}</BrowserRouter>
+export const RouterDecorator = (StoryComponent: Story) => {
+    return (
+        <BrowserRouter>
+            <StoryComponent />
+        </BrowserRouter>
+    )
 }
 // каждый component.stories.tsx оборачивает в роутер, чтобы не было ошибки роута

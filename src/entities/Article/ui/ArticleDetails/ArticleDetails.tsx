@@ -30,7 +30,7 @@ import { HStack, VStack } from "shared/ui/Stack/Flex"
 
 interface ArticleDetailsProps {
     className?: string
-    id: string
+    id?: string
 }
 
 const reducers: ReducersList = {
