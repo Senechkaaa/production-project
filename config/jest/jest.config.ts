@@ -8,8 +8,8 @@ import path from "path"
 export default {
     globals: {
         __IS_DEV__: true,
-        __API__: '',
-        __PROJECT__: 'jest'
+        __API__: "",
+        __PROJECT__: "jest",
     },
     clearMocks: true,
     testEnvironment: "jsdom",
@@ -24,6 +24,18 @@ export default {
     rootDir: "../../",
     modulePaths: ["<rootDir>/src"],
     setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+    reporters: [
+        "default",
+        [
+            "jest-html-reporters",
+            {
+                filename: "report.html",
+                openReport: true,
+                publicPath: "<rootDir>/reports/unit",
+                inlineSource: true,
+            },
+        ],
+    ],
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
