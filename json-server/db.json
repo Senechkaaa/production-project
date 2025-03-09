@@ -1,706 +1,680 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server",
-      "userId": 1
-    },
-    {
-      "id": "2",
-      "title": "json-server",
-      "userId": 2
-    }
-  ],
-  "articles": [
-    {
-      "id": "1",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 1022,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    "notifications": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "title": "Python Лучший язык?",
-      "subtitle": "Python В наше время ",
-      "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-      "views": 102342,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "title": "Kotlin новая Java",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGeyRWIrFlmmtuAzjub6qNKOx9Ub3jESPG9w&s",
-      "views": 984023,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "title": "Kotlin стал лучше java",
-      "subtitle": "Python В наше время ",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGeyRWIrFlmmtuAzjub6qNKOx9Ub3jESPG9w&s",
-      "views": 102,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "title": "Ruby хорош?",
-      "subtitle": "актуален ли Ruby в 2025",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/800px-Ruby_logo.svg.png",
-      "views": 930,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "ALL"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "title": "Golang супер скорость?",
-      "subtitle": "Golang лучший для новичков?",
-      "img": "https://blog.skillfactory.ru/wp-content/uploads/2023/02/image2-8611380.png",
-      "views": 22214,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "8",
-      "title": "Создатель C++",
-      "subtitle": "Кто и когда создал c++",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png",
-      "views": 32,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "9",
-      "title": "C",
-      "subtitle": "Настолько низкоуравнивый",
-      "img": "https://banner2.cleanpng.com/20180405/doe/avgjobs91.webp",
-      "views": 672,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "10",
-      "title": "Стоит ли учить С#",
-      "subtitle": "Все сервера написаны на нем",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5huhL1Lgv0HgfUP01C12fMLQPWclPu8wgTg&s",
-      "views": 96812,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "11",
-      "title": "Assembly полная ж?",
-      "subtitle": "ЯП, который вынесет твой мозг",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYrAZc4JAnHsc0i1h7ojvE9b3GtPE7jOjOQ&s",
-      "views": 1,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "12",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 483,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "13",
-      "title": "Python Лучший язык?",
-      "subtitle": "Python В наше время ",
-      "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-      "views": 18019,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "14",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 1022,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "15",
-      "title": "Python Лучший язык?",
-      "subtitle": "Python В наше время ",
-      "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-      "views": 18019,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "16",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 1022,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "17",
-      "title": "Python Лучший язык?",
-      "subtitle": "Python В наше время ",
-      "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-      "views": 18019,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "18",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 1022,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "19",
-      "title": "Python Лучший язык?",
-      "subtitle": "Python В наше время ",
-      "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-      "views": 18019,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "20",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 1022,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "22",
-      "title": "Python Лучший язык?",
-      "subtitle": "Python В наше время ",
-      "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
-      "views": 18019,
-      "createdAt": "02.02.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "title": "Язык программирования Rust: безопасность, производительность и преимущества",
-      "subtitle": "Эта статься написана разработчиком с опытом 5 лет",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKNkUwlIc1vmxskd1rrsznksOxBZ91pfzhg&s",
-      "views": 6492,
-      "createdAt": "12.08.2020",
-      "userId": "2",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Производительность в Rust",
-          "paragraphs": [
-            "Rust был разработан с учетом требований производительности, и его основные характеристики делают его одним из самых быстрых языков программирования. Rust не использует сборщик мусора, что позволяет управлять памятью более эффективно. Вместо этого Rust автоматически обрабатывает память с помощью системы владения и времени жизни, что позволяет минимизировать паузы во время выполнения программы и ускорить работу приложений."
-          ]
+            "id": "1",
+            "title": "Уведомление 1",
+            "descriptions": "Произошло какое-то событие",
+            "userId": 1
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n<meta charset=\"UTF-8\" />\n<title>Socket.IO Пример</title>\n</head>\n<body>\n<h1>Пример подключения Socket.IO</h1>\n<script src=\"/socket.io/socket.io.js\"></script>\n<script>\nconst socket = io();\n\nsocket.on('connect', () => {\nconsole.log('Подключено к серверу');\nsocket.emit('message', 'Привет, сервер!');\n});\n\nsocket.on('message', (msg) => {\nconsole.log('Сообщение от сервера:', msg);\n});\n</script>\n</body>\n</html>"
+            "id": "2",
+            "title": "Уведомление 2",
+            "descriptions": "Произошло какое-то событие",
+            "userId": 1,
+            "href": "http://localhost:3000/admin"
         },
         {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://itproger.com/img/news/1703400494.png",
-          "title": "ПРОИЗВОДИТЕЛЬНОСТЬ"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const express = require('express');\nconst http = require('http');\nconst { Server } = require('socket.io');\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new Server(server);\n\n// Обработка подключения клиента\nio.on('connection', (socket) => {\n console.log('Пользователь подключился');\n\n // Обработка сообщения от клиента\n socket.on('message', (msg) => {\n  console.log('Получено сообщение:', msg);\n  // Отправляем сообщение обратно клиенту (эхо)\n  socket.emit('message', msg);\n });\n\n socket.on('disconnect', () => {\n  console.log('Пользователь отключился');\n });\n});\n\nserver.listen(3000, () => {\n console.log('Сервер запущен на порту 3000');\n});"
-        },
-        {
-          "id": "6",
-          "type": "TEXT",
-          "title": "Совместимость с C и C++",
-          "paragraphs": [
-            "Одной из главных причин, по которой разработчики выбирают Rust для работы с C и C++, является его совместимость с ABI (Application Binary Interface) языков C и C++. Благодаря этому Rust может вызывать функции, написанные на C и C++, а также предоставлять свои собственные функции для вызова из C и C++ программ. Это достигается с помощью специального атрибута #[no_mangle] и ключевого слова extern, которые указывают компилятору на то, что функция должна использовать C-подобное соглашение об именах и вызовах. Кроме того, структуры данных Rust могут быть представлены в формате, совместимом с C, с использованием атрибута #[repr(C)]."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "IMAGE",
-          "src": "https://media.proglib.io/posts/2021/08/20/819250577706c76506021a501eab76cc.jpg",
-          "title": "Rust новый с++?"
-        },
-        {
-          "id": "12",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "Rust был разработан с учетом специфики системного программирования, что предопределило его основные преимущества. Во-первых, Rust обеспечивает безопасность памяти без использования сборщика мусора, что является ключевым фактором для высокопроизводительных систем. Это достигается за счет строгой системы владения (ownership) и контроля времени жизни (borrowing), которые позволяют автоматически управлять памятью и избегать проблем, таких как висячие указатели, двойное освобождение памяти и гонки данных."
-          ]
+            "id": "3",
+            "title": "Уведомление 3",
+            "descriptions": "Произошло какое-то событие",
+            "userId": 1,
+            "href": "http://localhost:3000/admin"
         }
-      ]
-    },
-    {
-      "id": "1",
-      "title": "Javascript news",
-      "subtitle": "Что нового в JS за 2025 год?",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
-      "views": 1022,
-      "createdAt": "26.01.2025",
-      "userId": "1",
-      "type": [
-        "IT"
-      ],
-      "blocks": [
+    ],
+    "posts": [
         {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
+            "id": "1",
+            "title": "json-server",
+            "userId": 1
         },
         {
-          "id": "4",
-          "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n<meta charset=\"UTF-8\" />\n<title>Socket.IO Пример</title>\n</head>\n<body>\n<h1>Пример подключения Socket.IO</h1>\n<script src=\"/socket.io/socket.io.js\"></script>\n<script>\nconst socket = io();\n\nsocket.on('connect', () => {\nconsole.log('Подключено к серверу');\nsocket.emit('message', 'Привет, сервер!');\n});\n\nsocket.on('message', (msg) => {\nconsole.log('Сообщение от сервера:', msg);\n});\n</script>\n</body>\n</html>"
-        },
-        {
-          "id": "2",
-          "type": "IMAGE",
-          "src": "https://www.fullstackpython.com/img/visuals/websockets-flow.png",
-          "title": "Рисунок 1 - схема сокетов"
-        },
-        {
-          "id": "3",
-          "type": "CODE",
-          "code": "const express = require('express');\nconst http = require('http');\nconst { Server } = require('socket.io');\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new Server(server);\n\n// Обработка подключения клиента\nio.on('connection', (socket) => {\n console.log('Пользователь подключился');\n\n // Обработка сообщения от клиента\n socket.on('message', (msg) => {\n  console.log('Получено сообщение:', msg);\n  // Отправляем сообщение обратно клиенту (эхо)\n  socket.emit('message', msg);\n });\n\n socket.on('disconnect', () => {\n  console.log('Пользователь отключился');\n });\n});\n\nserver.listen(3000, () => {\n console.log('Сервер запущен на порту 3000');\n});"
-        },
-        {
-          "id": "6",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
-            "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
-          ]
-        },
-        {
-          "id": "7",
-          "type": "IMAGE",
-          "src": "https://www.fullstackpython.com/img/visuals/websockets-flow.png",
-          "title": "Рисунок 1 - схема сокетов"
-        },
-        {
-          "id": "12",
-          "type": "TEXT",
-          "title": "Заголовок этого блока",
-          "paragraphs": [
-            "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений."
-          ]
+            "id": "2",
+            "title": "json-server",
+            "userId": 2
         }
-      ]
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "some comment",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "2",
-      "text": "some comment 2",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "id": "3",
-      "text": "some comment 3",
-      "articleId": "1",
-      "userId": "1"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Лямба",
-      "id": "Eaq9rU_"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Второй пользователь",
-      "id": "ca8UoIK"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "Сигма бой сигма бой",
-      "id": "-e7F0Qw"
-    },
-    {
-      "articleId": "1",
-      "userId": "1",
-      "text": "Статья норм",
-      "id": "VX4SF8f"
-    },
-    {
-      "articleId": "3",
-      "userId": "1",
-      "text": "Пишу на Rust 2 года",
-      "id": "xWgrfrc"
-    },
-    {
-      "articleId": "3",
-      "userId": "1",
-      "text": "Он не заменит c и c++",
-      "id": "CwaVFVr"
-    },
-    {
-      "articleId": "2",
-      "userId": "1",
-      "text": "Lold",
-      "id": "4sW8IGt"
-    },
-    {
-      "articleId": "8",
-      "userId": "1",
-      "text": "Боба",
-      "id": "mB98Uj3"
-    },
-    {
-      "articleId": "8",
-      "userId": "1",
-      "text": "Пид",
-      "id": "yuBEaN3"
-    }
-  ],
-  "users": [
-    {
-      "id": "1",
-      "username": "admin",
-      "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
-      "avatar": "https://habrastorage.org/files/9ec/4ea/93a/9ec4ea93ab9a440e8a293a87df6dc303.gif"
-    },
-    {
-      "id": "2",
-      "username": "user",
-      "password": "123",
-      "roles": [
-        "USER"
-      ],
-      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png"
-    }
-  ],
-  "profile": [
-    {
-      "id": "1",
-      "first": "Borov",
-      "city": "New York",
-      "lastname": "Belfort",
-      "age": 19,
-      "avatar": "https://habrastorage.org/files/9ec/4ea/93a/9ec4ea93ab9a440e8a293a87df6dc303.gif",
-      "username": "admin",
-      "currency": "USD",
-      "country": "USA"
-    },
-    {
-      "id": "2",
-      "first": "Jonny",
-      "city": "Vashigton",
-      "lastname": "Belfort",
-      "age": 36,
-      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png",
-      "username": "sigma",
-      "currency": "RUB",
-      "country": "Russia"
-    }
-  ]
+    ],
+    "articles": [
+        {
+            "id": "1",
+            "title": "Javascript news",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+            "views": 1022,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "title": "Python Лучший язык?",
+            "subtitle": "Python В наше время ",
+            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
+            "views": 102342,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["ECONOMICS"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "title": "Kotlin новая Java",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGeyRWIrFlmmtuAzjub6qNKOx9Ub3jESPG9w&s",
+            "views": 984023,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["ECONOMICS"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "title": "Kotlin стал лучше java",
+            "subtitle": "Python В наше время ",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGeyRWIrFlmmtuAzjub6qNKOx9Ub3jESPG9w&s",
+            "views": 102,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["SCIENCE"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "title": "Ruby хорош?",
+            "subtitle": "актуален ли Ruby в 2025",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/800px-Ruby_logo.svg.png",
+            "views": 930,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["ALL"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "title": "Golang супер скорость?",
+            "subtitle": "Golang лучший для новичков?",
+            "img": "https://blog.skillfactory.ru/wp-content/uploads/2023/02/image2-8611380.png",
+            "views": 22214,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "title": "Создатель C++",
+            "subtitle": "Кто и когда создал c++",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png",
+            "views": 32,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "title": "C",
+            "subtitle": "Настолько низкоуравнивый",
+            "img": "https://banner2.cleanpng.com/20180405/doe/avgjobs91.webp",
+            "views": 672,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["SCIENCE"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "10",
+            "title": "Стоит ли учить С#",
+            "subtitle": "Все сервера написаны на нем",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5huhL1Lgv0HgfUP01C12fMLQPWclPu8wgTg&s",
+            "views": 96812,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "11",
+            "title": "Assembly полная ж?",
+            "subtitle": "ЯП, который вынесет твой мозг",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmYrAZc4JAnHsc0i1h7ojvE9b3GtPE7jOjOQ&s",
+            "views": 1,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["SCIENCE"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "12",
+            "title": "Javascript news",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+            "views": 483,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "13",
+            "title": "Python Лучший язык?",
+            "subtitle": "Python В наше время ",
+            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
+            "views": 18019,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "14",
+            "title": "Javascript news",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+            "views": 1022,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "15",
+            "title": "Python Лучший язык?",
+            "subtitle": "Python В наше время ",
+            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
+            "views": 18019,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "16",
+            "title": "Javascript news",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+            "views": 1022,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "17",
+            "title": "Python Лучший язык?",
+            "subtitle": "Python В наше время ",
+            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
+            "views": 18019,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "18",
+            "title": "Javascript news",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+            "views": 1022,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "19",
+            "title": "Python Лучший язык?",
+            "subtitle": "Python В наше время ",
+            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
+            "views": 18019,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "20",
+            "title": "Javascript news",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+            "views": 1022,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "22",
+            "title": "Python Лучший язык?",
+            "subtitle": "Python В наше время ",
+            "img": "https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=800%2C800&ssl=1",
+            "views": 18019,
+            "createdAt": "02.02.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Python — высокоуровневый язык программирования. Благодаря ясному синтаксису его код понятен и легко читается. Python часто называют «исполнимым псевдокодом»: на нём можно писать код быстрее, чем на других языках."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "title": "Язык программирования Rust: безопасность, производительность и преимущества",
+            "subtitle": "Эта статься написана разработчиком с опытом 5 лет",
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKNkUwlIc1vmxskd1rrsznksOxBZ91pfzhg&s",
+            "views": 6492,
+            "createdAt": "12.08.2020",
+            "userId": "2",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Производительность в Rust",
+                    "paragraphs": [
+                        "Rust был разработан с учетом требований производительности, и его основные характеристики делают его одним из самых быстрых языков программирования. Rust не использует сборщик мусора, что позволяет управлять памятью более эффективно. Вместо этого Rust автоматически обрабатывает память с помощью системы владения и времени жизни, что позволяет минимизировать паузы во время выполнения программы и ускорить работу приложений."
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n<meta charset=\"UTF-8\" />\n<title>Socket.IO Пример</title>\n</head>\n<body>\n<h1>Пример подключения Socket.IO</h1>\n<script src=\"/socket.io/socket.io.js\"></script>\n<script>\nconst socket = io();\n\nsocket.on('connect', () => {\nconsole.log('Подключено к серверу');\nsocket.emit('message', 'Привет, сервер!');\n});\n\nsocket.on('message', (msg) => {\nconsole.log('Сообщение от сервера:', msg);\n});\n</script>\n</body>\n</html>"
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://itproger.com/img/news/1703400494.png",
+                    "title": "ПРОИЗВОДИТЕЛЬНОСТЬ"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const express = require('express');\nconst http = require('http');\nconst { Server } = require('socket.io');\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new Server(server);\n\n// Обработка подключения клиента\nio.on('connection', (socket) => {\n console.log('Пользователь подключился');\n\n // Обработка сообщения от клиента\n socket.on('message', (msg) => {\n  console.log('Получено сообщение:', msg);\n  // Отправляем сообщение обратно клиенту (эхо)\n  socket.emit('message', msg);\n });\n\n socket.on('disconnect', () => {\n  console.log('Пользователь отключился');\n });\n});\n\nserver.listen(3000, () => {\n console.log('Сервер запущен на порту 3000');\n});"
+                },
+                {
+                    "id": "6",
+                    "type": "TEXT",
+                    "title": "Совместимость с C и C++",
+                    "paragraphs": [
+                        "Одной из главных причин, по которой разработчики выбирают Rust для работы с C и C++, является его совместимость с ABI (Application Binary Interface) языков C и C++. Благодаря этому Rust может вызывать функции, написанные на C и C++, а также предоставлять свои собственные функции для вызова из C и C++ программ. Это достигается с помощью специального атрибута #[no_mangle] и ключевого слова extern, которые указывают компилятору на то, что функция должна использовать C-подобное соглашение об именах и вызовах. Кроме того, структуры данных Rust могут быть представлены в формате, совместимом с C, с использованием атрибута #[repr(C)]."
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "IMAGE",
+                    "src": "https://media.proglib.io/posts/2021/08/20/819250577706c76506021a501eab76cc.jpg",
+                    "title": "Rust новый с++?"
+                },
+                {
+                    "id": "12",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "Rust был разработан с учетом специфики системного программирования, что предопределило его основные преимущества. Во-первых, Rust обеспечивает безопасность памяти без использования сборщика мусора, что является ключевым фактором для высокопроизводительных систем. Это достигается за счет строгой системы владения (ownership) и контроля времени жизни (borrowing), которые позволяют автоматически управлять памятью и избегать проблем, таких как висячие указатели, двойное освобождение памяти и гонки данных."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "title": "Javascript news",
+            "subtitle": "Что нового в JS за 2025 год?",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+            "views": 1022,
+            "createdAt": "26.01.2025",
+            "userId": "1",
+            "type": ["IT"],
+            "blocks": [
+                {
+                    "id": "1",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                },
+                {
+                    "id": "4",
+                    "type": "CODE",
+                    "code": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n<meta charset=\"UTF-8\" />\n<title>Socket.IO Пример</title>\n</head>\n<body>\n<h1>Пример подключения Socket.IO</h1>\n<script src=\"/socket.io/socket.io.js\"></script>\n<script>\nconst socket = io();\n\nsocket.on('connect', () => {\nconsole.log('Подключено к серверу');\nsocket.emit('message', 'Привет, сервер!');\n});\n\nsocket.on('message', (msg) => {\nconsole.log('Сообщение от сервера:', msg);\n});\n</script>\n</body>\n</html>"
+                },
+                {
+                    "id": "2",
+                    "type": "IMAGE",
+                    "src": "https://www.fullstackpython.com/img/visuals/websockets-flow.png",
+                    "title": "Рисунок 1 - схема сокетов"
+                },
+                {
+                    "id": "3",
+                    "type": "CODE",
+                    "code": "const express = require('express');\nconst http = require('http');\nconst { Server } = require('socket.io');\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new Server(server);\n\n// Обработка подключения клиента\nio.on('connection', (socket) => {\n console.log('Пользователь подключился');\n\n // Обработка сообщения от клиента\n socket.on('message', (msg) => {\n  console.log('Получено сообщение:', msg);\n  // Отправляем сообщение обратно клиенту (эхо)\n  socket.emit('message', msg);\n });\n\n socket.on('disconnect', () => {\n  console.log('Пользователь отключился');\n });\n});\n\nserver.listen(3000, () => {\n console.log('Сервер запущен на порту 3000');\n});"
+                },
+                {
+                    "id": "6",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений.",
+                        "Socket.IO: Выбор для проектов, где важно обеспечить стабильное соединение даже в нестабильных сетевых условиях, благодаря автоматическому переподключению и поддержке fallback."
+                    ]
+                },
+                {
+                    "id": "7",
+                    "type": "IMAGE",
+                    "src": "https://www.fullstackpython.com/img/visuals/websockets-flow.png",
+                    "title": "Рисунок 1 - схема сокетов"
+                },
+                {
+                    "id": "12",
+                    "type": "TEXT",
+                    "title": "Заголовок этого блока",
+                    "paragraphs": [
+                        "WebSocket: Идеален для приложений, где требуется двусторонняя коммуникация в реальном времени и минимальные задержки. Подходит для реализации чатов, онлайн-игр и систем уведомлений."
+                    ]
+                }
+            ]
+        }
+    ],
+    "comments": [
+        {
+            "id": "1",
+            "text": "some comment",
+            "articleId": "1",
+            "userId": "1"
+        },
+        {
+            "id": "2",
+            "text": "some comment 2",
+            "articleId": "1",
+            "userId": "1"
+        },
+        {
+            "id": "3",
+            "text": "some comment 3",
+            "articleId": "1",
+            "userId": "1"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "Лямба",
+            "id": "Eaq9rU_"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "Второй пользователь",
+            "id": "ca8UoIK"
+        },
+        {
+            "articleId": "1",
+            "userId": "2",
+            "text": "Сигма бой сигма бой",
+            "id": "-e7F0Qw"
+        },
+        {
+            "articleId": "1",
+            "userId": "1",
+            "text": "Статья норм",
+            "id": "VX4SF8f"
+        },
+        {
+            "articleId": "3",
+            "userId": "1",
+            "text": "Пишу на Rust 2 года",
+            "id": "xWgrfrc"
+        },
+        {
+            "articleId": "3",
+            "userId": "1",
+            "text": "Он не заменит c и c++",
+            "id": "CwaVFVr"
+        },
+        {
+            "articleId": "2",
+            "userId": "1",
+            "text": "Lold",
+            "id": "4sW8IGt"
+        },
+        {
+            "articleId": "8",
+            "userId": "1",
+            "text": "Боба",
+            "id": "mB98Uj3"
+        },
+        {
+            "articleId": "8",
+            "userId": "1",
+            "text": "Пид",
+            "id": "yuBEaN3"
+        }
+    ],
+    "users": [
+        {
+            "id": "1",
+            "username": "admin",
+            "password": "123",
+            "roles": ["ADMIN"],
+            "avatar": "https://habrastorage.org/files/9ec/4ea/93a/9ec4ea93ab9a440e8a293a87df6dc303.gif"
+        },
+        {
+            "id": "2",
+            "username": "user",
+            "password": "123",
+            "roles": ["USER"],
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png"
+        }
+    ],
+    "profile": [
+        {
+            "id": "1",
+            "first": "Borov",
+            "city": "New York",
+            "lastname": "Belfort",
+            "age": 19,
+            "avatar": "https://habrastorage.org/files/9ec/4ea/93a/9ec4ea93ab9a440e8a293a87df6dc303.gif",
+            "username": "admin",
+            "currency": "USD",
+            "country": "USA"
+        },
+        {
+            "id": "2",
+            "first": "Jonny",
+            "city": "Vashigton",
+            "lastname": "Belfort",
+            "age": 36,
+            "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png",
+            "username": "sigma",
+            "currency": "RUB",
+            "country": "Russia"
+        }
+    ]
 }

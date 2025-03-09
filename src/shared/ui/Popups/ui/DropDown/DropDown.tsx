@@ -3,7 +3,9 @@ import cls from "./DropDow.module.scss"
 import { classNames } from "shared/lib/classNames/classnames"
 import { Fragment, ReactNode } from "react"
 import { DropDownDirection } from "shared/types/ui"
-import { AppLink } from "../AppLink/AppLink"
+import { AppLink } from "../../../AppLink/AppLink"
+import { mapDirectionClass } from "../../consts/consts"
+import popupCls from '../../styles/popup.module.scss'
 
 interface DropDownProps {
     className?: string
@@ -19,27 +21,26 @@ interface DropDownItem {
     href?: string
 }
 
-const mapDirectionClass: Record<DropDownDirection, string> = {
-    "bottom left": cls.optionBottomLeft,
-    "bottom right": cls.optionBottomRight,
-    "top left": cls.optionTopLeft,
-    "top right": cls.optionTopRight,
-}
-
 export const DropDown = (props: DropDownProps) => {
     const { className, items, trigger, direction = "bottom right" } = props
 
     const menuClasses = mapDirectionClass[direction]
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
-            <Menu.Button className={cls.btn}>{trigger}</Menu.Button>
+        <Menu
+            as="div"
+            className={classNames(cls.Dropdown, {}, [
+                className,
+                popupCls.popup,
+            ])}
+        >
+            <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, [menuClasses])}>
                 {items.map((item) => {
                     const content = ({ active }: { active: boolean }) => (
                         <button
                             className={classNames(
                                 cls.item,
-                                { [cls.active]: active },
+                                { [popupCls.active]: active },
                                 [],
                             )}
                             type="button"
@@ -50,7 +51,7 @@ export const DropDown = (props: DropDownProps) => {
                         </button>
                     )
 
-                    if(item.href) {
+                    if (item.href) {
                         return (
                             <Menu.Item
                                 key={item.href}

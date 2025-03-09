@@ -2,9 +2,11 @@ import { Listbox as HListBox } from "@headlessui/react"
 import { Fragment, ReactNode } from "react"
 import cls from "./ListBox.module.scss"
 import { classNames } from "shared/lib/classNames/classnames"
-import { Button } from "../Button/Button"
-import { HStack } from "../Stack/Flex"
-import { DropDownDirection } from "../../types/ui"
+import { Button } from "../../../Button/Button"
+import { HStack } from "../../../Stack/Flex"
+import { DropDownDirection } from "../../../../types/ui"
+import { mapDirectionClass } from "../../consts/consts"
+import popupCls from "../../styles/popup.module.scss"
 
 export interface ListBoxItem {
     value: string
@@ -23,12 +25,6 @@ interface ListBoxProps {
     label?: string
 }
 
-const mapDirectionClass: Record<DropDownDirection, string> = {
-    "bottom left": cls.optionBottomLeft,
-    "bottom right": cls.optionBottomRight,
-    "top left": cls.optionTopLeft,
-    "top right": cls.optionTopRight,
-}
 
 export const ListBox = (props: ListBoxProps) => {
     const {
@@ -49,7 +45,10 @@ export const ListBox = (props: ListBoxProps) => {
             <HListBox
                 disabled={readonly}
                 as={"div"}
-                className={classNames(cls.ListBox, {}, [className])}
+                className={classNames(cls.ListBox, {}, [
+                    className,
+                    popupCls.popup,
+                ])}
                 value={value}
                 onChange={onChange}
             >
@@ -71,8 +70,8 @@ export const ListBox = (props: ListBoxProps) => {
                                     className={classNames(
                                         cls.item,
                                         {
-                                            [cls.active]: active,
-                                            [cls.disabled]: item.disabled,
+                                            [popupCls.active]: active,
+                                            [popupCls.disabled]: item.disabled,
                                         },
                                         [],
                                     )}
