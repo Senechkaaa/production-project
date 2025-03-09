@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "webpack serve --env port=3000",
+        "start": "webpack serve --env port=3003",
         "start:dev:server": "node ./json-server/index.js",
         "start:dev": "concurrently \"npm start\" \"npm start:dev:server\"",
         "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-lyart-one.vercel.app ",
@@ -29,6 +29,7 @@
     "description": "",
     "devDependencies": {
         "@babel/core": "^7.22.0",
+        "@babel/plugin-transform-runtime": "^7.18.10",
         "@babel/preset-env": "^7.16.11",
         "@babel/preset-react": "^7.16.7",
         "@babel/preset-typescript": "^7.16.7",
@@ -66,6 +67,7 @@
         "eslint-plugin-react": "^7.37.4",
         "eslint-plugin-react-hooks": "^5.1.0",
         "file-loader": "^6.2.0",
+        "fork-ts-checker-webpack-plugin": "^7.2.13",
         "globals": "^15.14.0",
         "html-webpack-plugin": "^5.5.0",
         "husky": "^7.0.0",

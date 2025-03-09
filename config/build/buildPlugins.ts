@@ -11,6 +11,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
 import CopyPlugin from "copy-webpack-plugin"
 import CircularDependencyPlugin from "circular-dependency-plugin"
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
 export function buildPlugins({
     paths,
@@ -50,6 +51,24 @@ export function buildPlugins({
             failOnError: true,
             // при обнаружении кольцевой зависимости будет ошибка
         }),
+        // используется для выявления кольцевых зависимостей в вашем проекте.
+
+        // Кольцевые зависимости — это ситуация, когда два или более модуля (или файла) зависят друг от друга напрямую или через цепочку зависимостей.
+
+        // условно, избавиться от абсолютных импортов. Не правильно: "entites/Article", правильно: "../../model/types/article.ts"
+
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                diagnosticOptions: {
+                    semantic: true,
+                    syntactic: true,
+                },
+                mode: "write-references",
+            },
+        }),
+        // этот плагин выносит проверку типов в отдельный процесс.
+        // Он работает параллельно с основным процессом сборки, чтобы ускорить процесс.
+        // Теперь проверка типов это отдельный процесс, который не влияет на скорость сборки основного кода.
     ]
 
     if (isDev) {

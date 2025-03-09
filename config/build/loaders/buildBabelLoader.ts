@@ -1,8 +1,13 @@
+import babelRemovePropsPlugin from "../babel/babelREmovePropsPlugin"
 import { BuildOptions } from "../types/config"
 
-export function buildBabelLoader(options: BuildOptions) {
+interface BuildBabelLoaderProps extends BuildOptions {
+    isTsx?: boolean
+}
+
+export function buildBabelLoader({ isTsx, isDev }: BuildBabelLoaderProps) {
     return {
-        test: /\.(js|jsx|tsx)$/,
+        test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
         exclude: /node_modules/,
         use: {
             loader: "babel-loader",
@@ -13,7 +18,23 @@ export function buildBabelLoader(options: BuildOptions) {
                         "i18next-extract",
                         { locales: ["ru", "en"], keyAsDefaultValue: true },
                     ],
-                    options.isDev && require.resolve("react-refresh/babel"),
+                    [
+                        "@babel/plugin-transform-typescript",
+                        // компилирует Ts-код в Js-код
+                        {
+                            isTsx,
+                        },
+                    ],
+                    "@babel/plugin-transform-runtime",
+                    // оптимизирует код
+
+                    isTsx && [
+                        babelRemovePropsPlugin,
+                        {
+                            props: ['data-testid']
+                        }
+                    ],
+                    isDev && require.resolve("react-refresh/babel"),
                 ].filter(Boolean),
             },
         },
