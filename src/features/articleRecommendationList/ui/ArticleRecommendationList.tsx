@@ -10,20 +10,27 @@ interface ArticleRecommendationListProps {
     className?: string
 }
 
-
 export const ArticleRecommendationList = memo(
     ({ className }: ArticleRecommendationListProps) => {
         const { t } = useTranslation()
-        const { isLoading, data: articles, error } = useArticleRecommendationsList(3)
-        
+        const {
+            isLoading,
+            data: articles,
+            error,
+        } = useArticleRecommendationsList(3)
 
-        if (isLoading || error) {
+        if (isLoading || error || !articles) {
             return null
         }
+
         return (
             <VStack gap="8" className={classNames("", {}, [className])}>
                 <Text size={TextSize.L} title={t("Рекомендуем")} />
-                <ArticleList view={ArticleView.SMALL} articles={articles} />
+                <ArticleList
+                    virtualized={false}
+                    view={ArticleView.SMALL}
+                    articles={articles}
+                />
             </VStack>
         )
     },
