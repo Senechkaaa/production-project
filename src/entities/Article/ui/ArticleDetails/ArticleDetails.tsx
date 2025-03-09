@@ -27,7 +27,7 @@ import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/Articl
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent"
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
 import { HStack, VStack } from "shared/ui/Stack/Flex"
-import { ArticleBlockType } from "entities/Article"
+import { ArticleBlockType } from "../../model/consts/articleConsts"
 
 interface ArticleDetailsProps {
     className?: string

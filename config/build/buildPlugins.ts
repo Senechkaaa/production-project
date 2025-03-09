@@ -9,7 +9,8 @@ import { BuildOptions } from "./types/config"
 import MiniCssExtractPlugin from "mini-css-extract-plugin"
 // import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer"
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin"
-import CopyPlugin from 'copy-webpack-plugin'
+import CopyPlugin from "copy-webpack-plugin"
+import CircularDependencyPlugin from "circular-dependency-plugin"
 
 export function buildPlugins({
     paths,
@@ -41,9 +42,13 @@ export function buildPlugins({
 
         // плагин чтобы перенести наши переводы в сборку проекта
         new CopyPlugin({
-            patterns: [
-                { from: paths.locales, to: paths.buildLocales },
-            ],
+            patterns: [{ from: paths.locales, to: paths.buildLocales }],
+        }),
+
+        new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
+            // при обнаружении кольцевой зависимости будет ошибка
         }),
     ]
 
