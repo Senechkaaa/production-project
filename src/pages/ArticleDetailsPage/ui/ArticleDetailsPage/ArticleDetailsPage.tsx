@@ -1,5 +1,4 @@
 import { classNames } from "shared/lib/classNames/classnames"
-import { useTranslation } from "react-i18next"
 import { memo } from "react"
 import { ArticleDetails } from "entities/Article"
 import { useParams } from "react-router-dom"

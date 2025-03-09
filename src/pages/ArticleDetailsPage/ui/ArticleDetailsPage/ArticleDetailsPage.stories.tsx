@@ -4,7 +4,7 @@ import {
     Article,
     ArticleBlockType,
     ArticleType,
-} from "entities/Article/model/types/article"
+} from "entities/Article"
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
 
 export default {

@@ -18,7 +18,10 @@
         "baseUrl": ".",
         "paths": {
             "*": ["./src/*"]
-        }
+        },
+        "isolatedModules": true
+        // Этот параметр заставляет компилятор TypeScript обрабатывать каждый файл как отдельный модуль
+        // Мы отказываемся от ts-loader и подключаемся к babel-loader
     },
     "ts-node": {
         "compilerOptions": {

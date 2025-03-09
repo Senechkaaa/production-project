@@ -19,9 +19,9 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
-import { ValidateProfileError } from "../../model/types/editableProfileCardSchema"
 import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader"
 import { VStack } from "shared/ui/Stack/Flex"
+import { ValidateProfileError } from "features/editableProfileCard/model/consts/consts"
 
 interface EditableProfileCardProps {
     className?: string

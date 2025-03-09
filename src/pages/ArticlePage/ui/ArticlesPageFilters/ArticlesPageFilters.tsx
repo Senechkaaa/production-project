@@ -24,7 +24,7 @@ import { Input } from "shared/ui/Input/Input"
 import { SortOrder } from "shared/types"
 import { fetchArticlesList } from "pages/ArticlePage/model/services/fetchArticleList/fetchArticleList"
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce"
-import { ArticleType } from "entities/Article/model/types/article"
+import { ArticleType } from "entities/Article"
 
 interface ArticlesPageFiltersProps {
     className?: string
