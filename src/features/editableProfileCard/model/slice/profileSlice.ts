@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { Profile, ProfileSchema } from "../types/profile"
 import { fetchProfileData } from "../service/fetchProfileData/fetchProfileData"
 import { updateProfileData } from "../service/updateProfileData/updateProfileData"
+import { ProfileSchema } from "../types/editableProfileCardSchema"
+import { Profile } from "entities/Profile"
 
 const initialState: ProfileSchema = {
     readonly: true,
@@ -30,7 +31,6 @@ const profileSlice = createSlice({
         },
     },
     extraReducers: (builder) => {
-        // Add reducers for additional action types here, and handle loading state as needed
         builder
             .addCase(fetchProfileData.pending, (state) => {
                 state.error = undefined

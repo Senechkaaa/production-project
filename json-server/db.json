@@ -639,6 +639,12 @@
       "userId": "1",
       "text": "Он не заменит c и c++",
       "id": "CwaVFVr"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "Lold",
+      "id": "4sW8IGt"
     }
   ],
   "users": [
@@ -660,7 +666,7 @@
   "profile": [
     {
       "id": "1",
-      "first": "Tomas",
+      "first": "Borov",
       "city": "New York",
       "lastname": "Belfort",
       "age": 19,

@@ -1,0 +1,1 @@
+export { ProfileSchema } from './model/types/editableProfileCardSchema'

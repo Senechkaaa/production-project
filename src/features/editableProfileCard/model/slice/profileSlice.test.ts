@@ -1,5 +1,5 @@
 import { Country } from "entities/Country"
-import { ProfileSchema, ValidateProfileError } from "../types/profile"
+import { ValidateProfileError, ProfileSchema } from "../types/editableProfileCardSchema"
 import { profileActions, profileReducer } from "./profileSlice"
 import { Currency } from "entities/Currency"
 import { updateProfileData } from "../service/updateProfileData/updateProfileData"
