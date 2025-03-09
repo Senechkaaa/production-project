@@ -5,7 +5,12 @@ import { Button, ButtonTheme } from "shared/ui/Button/Button"
 import { useTranslation } from "react-i18next"
 import { LoginModal } from "features/AuthByUsername"
 import { useDispatch, useSelector } from "react-redux"
-import { getUserAuthData, userActions } from "entities/User"
+import {
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
+} from "entities/User"
 import { Text, TextTheme } from "shared/ui/Text/Text"
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink"
 import { RoutesPath } from "shared/config/routeConfig/routeConfig"
@@ -17,10 +22,12 @@ interface NavbarProps {
 }
 
 export const NavBar = memo(({ className }: NavbarProps) => {
+    const { t } = useTranslation()
     const [isAuthModal, setIsAuthModal] = useState(false)
     const authData = useSelector(getUserAuthData)
     const dispatch = useDispatch()
-    const { t } = useTranslation()
+    const isAdmin = useSelector(isUserAdmin)
+    const isManager = useSelector(isUserManager)
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false)
@@ -33,6 +40,8 @@ export const NavBar = memo(({ className }: NavbarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout())
     }, [dispatch])
+
+    const isAdminPanelAvaliable = isAdmin || isManager
 
     if (authData) {
         return (
@@ -53,13 +62,17 @@ export const NavBar = memo(({ className }: NavbarProps) => {
                     direction="bottom left"
                     className={cls.dropdown}
                     items={[
+                        ...(isAdminPanelAvaliable ? [{
+                            content: t("Админка"),
+                            href: RoutesPath.admin_panel,
+                        }] : []),
+                        {
+                            content: t("Профиль"),
+                            href: RoutesPath.profile + authData.id,
+                        },
                         {
                             content: t("Выйти"),
                             onClick: onLogout,
-                        },
-                        {
-                            content: t("Профиль"),
-                            href: RoutesPath.profile + authData.id
                         },
                     ]}
                     trigger={<Avatar size={30} src={authData.avatar} />}
