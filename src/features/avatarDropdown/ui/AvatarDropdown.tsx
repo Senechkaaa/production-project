@@ -2,7 +2,12 @@ import { classNames } from "shared/lib/classNames/classnames"
 import cls from "./AvatarDropdown.module.scss"
 import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "entities/User"
+import {
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
+} from "entities/User"
 import { useSelector } from "react-redux"
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { DropDown } from "shared/ui/Popups"
