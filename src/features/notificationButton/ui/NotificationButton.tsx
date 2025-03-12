@@ -8,6 +8,7 @@ import { NotificationList } from "entities/Notification"
 import NotificationIcon from "shared/assets/icons/notification-20-20.svg"
 import { Drawer } from "shared/ui/Drawer/Drawer"
 import { BrowserView, MobileView } from "react-device-detect"
+import { AnimationProvider } from "shared/lib/components/AnimationProvider"
 
 interface NotificationButtonProps {
     className?: string
@@ -15,7 +16,6 @@ interface NotificationButtonProps {
 
 export const NotificationButton = memo(
     ({ className }: NotificationButtonProps) => {
-
         const [isOpened, setIsOpened] = useState(false)
 
         const onOpenDrawer = useCallback(() => {
@@ -47,9 +47,11 @@ export const NotificationButton = memo(
                 </BrowserView>
                 <MobileView>
                     {trigger}
-                    <Drawer onClose={onCloseDrawer} isOpen={isOpened}>
-                        <NotificationList />
-                    </Drawer>
+                    <AnimationProvider>
+                        <Drawer onClose={onCloseDrawer} isOpen={isOpened}>
+                            <NotificationList />
+                        </Drawer>
+                    </AnimationProvider>
                 </MobileView>
             </div>
         )

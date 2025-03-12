@@ -1,8 +1,6 @@
 import { classNames, Mods } from "shared/lib/classNames/classnames"
 import cls from "./Modal.module.scss"
-import {
-    ReactNode,
-} from "react"
+import { ReactNode } from "react"
 import { Portal } from "../Portal/Portal"
 import { useTheme } from "app/providers/ThemeProvider"
 import { Overlay } from "../Overlay/Overlay"
@@ -20,12 +18,13 @@ const ANIMATIONDELAY = 300
 
 export const Modal = (props: ModalProps) => {
     const { children, className, isOpen, onClose, lazy } = props
-    const {isClosing, isMounted, close} = useModal({animationDelay: ANIMATIONDELAY, onClose,
-        isOpen
+    const { isClosing, isMounted, close } = useModal({
+        animationDelay: ANIMATIONDELAY,
+        onClose,
+        isOpen,
     })
     // обычно timerRef.current = нельзя изменять тк он не мутабильный, но мы меняем тип на MutableRefObject
     const { theme } = useTheme()
-
 
     const mods: Mods = {
         [cls.opened]: isOpen,
