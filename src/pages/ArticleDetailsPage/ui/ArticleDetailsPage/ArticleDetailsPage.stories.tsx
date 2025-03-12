@@ -4,8 +4,8 @@ import {
     Article,
     ArticleBlockType,
     ArticleType,
-} from "entities/Article"
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator"
+} from "@/entities/Article"
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator"
 
 export default {
     title: "pages/ArticleDetailsPage",

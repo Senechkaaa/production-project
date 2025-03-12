@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classnames'
+import { classNames } from '@/shared/lib/classNames/classnames'
 import cls from './Icon.module.scss'
 import { memo } from 'react'
 

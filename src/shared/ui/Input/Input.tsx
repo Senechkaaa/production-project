@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { classNames, Mods } from "shared/lib/classNames/classnames"
+import { classNames, Mods } from "@/shared/lib/classNames/classnames"
 import cls from "./Input.module.scss"
 import { InputHTMLAttributes, memo, useEffect, useRef, useState } from "react"
 

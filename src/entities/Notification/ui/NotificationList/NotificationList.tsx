@@ -1,18 +1,16 @@
-import { classNames } from "shared/lib/classNames/classnames"
+import { classNames } from "@/shared/lib/classNames/classnames"
 import cls from "./NotificationList.module.scss"
-import { useTranslation } from "react-i18next"
 import { memo } from "react"
-import { useNotifications } from "entities/Notification/api/notificationApi"
-import { VStack } from "shared/ui/Stack/Flex"
+import { useNotifications } from "@/entities/Notification/api/notificationApi"
+import { VStack } from "@/shared/ui/Stack/Flex"
 import { NotificationItem } from "../NotificationItem/NotificationItem"
-import { Skeleton } from "shared/ui/Skeleton/Skeleton"
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton"
 
 interface NotificationListProps {
     className?: string
 }
 
 export const NotificationList = memo(({ className }: NotificationListProps) => {
-    const { t } = useTranslation()
     const { data, isLoading } = useNotifications(null, {
         pollingInterval: 5000,
         // каждые 5 секунд делаем запрос 

@@ -1,17 +1,17 @@
-import { classNames } from "shared/lib/classNames/classnames"
+import { classNames } from "@/shared/lib/classNames/classnames"
 import { memo } from "react"
-import { ArticleDetails } from "entities/Article"
+import { ArticleDetails } from "@/entities/Article"
 import { useParams } from "react-router-dom"
 import {
     DynamicModuleLoader,
     ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import cls from "./ArticleDetailsPage.module.scss"
-import { Page } from "widgets/Page/Page"
+import { Page } from "@/widgets/Page/Page"
 import { articleDetailsReducer } from "../../model/slices"
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
-import { VStack } from "shared/ui/Stack/Flex"
-import { ArticleRecommendationList } from "features/articleRecommendationList"
+import { VStack } from "@/shared/ui/Stack/Flex"
+import { ArticleRecommendationList } from "@/features/articleRecommendationList"
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments"
 
 interface ArticleDetailsPageProps {

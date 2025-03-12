@@ -1,16 +1,16 @@
-import { classNames } from "shared/lib/classNames/classnames"
+import { classNames } from "@/shared/lib/classNames/classnames"
 import cls from "./ArticlePage.module.scss"
 import { memo, useCallback } from "react"
 import {
     DynamicModuleLoader,
     ReducersList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import {
     articlesPageReducer,
 } from "../../model/slices/articlePageSlice"
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect"
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch"
-import { Page } from "widgets/Page/Page"
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect"
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch"
+import { Page } from "@/widgets/Page/Page"
 import { fetchNextArticlePage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage"
 import { initArticlesPage } from "../../model/services/initArticlePage/initArticlePage"
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters"

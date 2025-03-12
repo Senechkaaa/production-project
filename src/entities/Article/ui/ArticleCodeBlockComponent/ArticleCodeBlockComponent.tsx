@@ -1,8 +1,8 @@
-import { classNames } from "shared/lib/classNames/classnames"
+import { classNames } from "@/shared/lib/classNames/classnames"
 import cls from "./ArticleCodeBlockComponent.module.scss"
 import { memo } from "react"
 import { ArticleCodeBlock } from "../../model/types/article"
-import { Code } from "shared/ui/Code/Code"
+import { Code } from "@/shared/ui/Code/Code"
 
 interface ArticleCodeBlockComponentProps {
     className?: string

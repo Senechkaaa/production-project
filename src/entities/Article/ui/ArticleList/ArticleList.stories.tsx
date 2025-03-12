@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react"
 import { ArticleList } from "./ArticleList"
-import { Article } from "entities/Article/model/types/article"
-import { ArticleView } from "entities/Article"
+import { Article } from "@/entities/Article/model/types/article"
+import { ArticleView } from "@/entities/Article"
 
 export default {
     title: "entities/Article/ArticleList",

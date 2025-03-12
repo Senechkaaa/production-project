@@ -4,7 +4,7 @@ import { ReactNode } from "react"
 import { mapDirectionClass } from "../../consts/consts"
 import cls from "./Popover.module.scss"
 import popupCls from "../../styles/popup.module.scss"
-import { classNames } from "shared/lib/classNames/classnames"
+import { classNames } from "@/shared/lib/classNames/classnames"
 
 interface PopoverProps {
     className?: string

@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classnames'
+import { classNames } from '@/shared/lib/classNames/classnames'
 import cls from './Skeleton.module.scss'
 import { CSSProperties, memo } from 'react'
 

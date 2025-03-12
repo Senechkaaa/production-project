@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { ThunkConfig } from "app/providers/StoreProvider"
-import { Comment } from "entities/Comment"
-import { getUserAuthData } from "entities/User"
+import { ThunkConfig } from "@/app/providers/StoreProvider"
+import { Comment } from "@/entities/Comment"
+import { getUserAuthData } from "@/entities/User"
 import { getAddCommentFormText } from "../../selectors/addCommentFormSelectors"
-import { getArticleDetailsData } from "entities/Article/model/selectors/articleDetails"
+import { getArticleDetailsData } from "@/entities/Article/model/selectors/articleDetails"
 import { addCommentFormActions } from "../../slices/addCommentFormSlice"
 
 export const sendComment = createAsyncThunk<Comment, void, ThunkConfig<string>>(
