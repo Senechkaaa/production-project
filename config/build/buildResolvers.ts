@@ -11,8 +11,7 @@ export function buildResolvers(options: BuildOptions): ResolveOptions {
         mainFiles: ['index'],
         // для каждого модуля главным файлом будет являться index,
         alias: {
-            '@': options.paths.src,
-            
+            '@': options.paths.src,  
         }
     }
 }

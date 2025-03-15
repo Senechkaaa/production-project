@@ -1,6 +1,5 @@
 import { classNames } from "@/shared/lib/classNames/classnames"
 import cls from "./StarRating.module.scss"
-import { useTranslation } from "react-i18next"
 import { memo, useState } from "react"
 import { Icon } from "../Icon/Icon"
 import StarIcon from "@/shared/assets/icons/star.svg"
@@ -15,7 +14,6 @@ interface StarRatingProps {
 const stars = [1, 2, 3, 4, 5]
 
 export const StarRating = memo((props: StarRatingProps) => {
-    const { t } = useTranslation()
     const { className, size = 30, selectedStars = 0, onSelect } = props
     const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars))

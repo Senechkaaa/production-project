@@ -1,49 +1,18 @@
 import { UserRole } from "@/entities/User"
-import { AboutPage } from "@/pages/AboutPage"
-import { AdminPanelPage } from "@/pages/AdminPanelPage"
-import { ArticleDetailsPage } from "@/pages/ArticleDetailsPage"
-import { ArticleEditPage } from "@/pages/ArticleEditPage"
-import { ArticlePage } from "@/pages/ArticlePage"
+import { AboutPageAsync as AboutPage } from "@/pages/AboutPage/ui/AboutPage.async"
+import { AdminPanelPageAsync as AdminPanelPage } from "@/pages/AdminPanelPage/ui/AdminPanelPage.async"
+import { ArticleDetailsPageAsync as ArticleDetailsPage } from "@/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.async"
+import { ArticleEditPageAsync as ArticleEditPage } from "@/pages/ArticleEditPage/ui/ArticleEditPage.async"
+import { ArticlePageAsync as ArticlePage } from "@/pages/ArticlePage/ui/ArticlePage/ArticlePage.async"
 import { ForbiddenPage } from "@/pages/ForbiddenPage"
-import { MainPage } from "@/pages/MainPage"
+import { MainPageAsync as MainPage } from "@/pages/MainPage/ui/MainPage.async"
 import { NotFoundPage } from "@/pages/NotFoundPage"
-import { ProfilePage } from "@/pages/ProfilePage"
-import { RouteProps } from "react-router-dom"
-
-export type AppRoutesProps = RouteProps & {
-    authOnly?: boolean
-    roles?: UserRole[]
-}
-
-export enum AppRoutes {
-    MAIN = "main",
-    ABOUT = "about",
-    PROFILE = "profile",
-    ARTICLES = "articles",
-    ARTICLE_DETAILS = "article_details",
-    ARTICLE_CREATE = "article_create",
-    ARTICLE_EDIT = "article_edit",
-    ADMIN_PANEL = "admin_panel",
-    FORBIDDEN = "forbidden",
-    // last
-    NOT_FOUND = "not_found",
-}
-
-export const RoutesPath: Record<AppRoutes, string> = {
-    [AppRoutes.ABOUT]: "/about",
-    [AppRoutes.MAIN]: "/",
-    [AppRoutes.PROFILE]: "/profile/", // + id
-    [AppRoutes.ARTICLES]: "/articles",
-    [AppRoutes.ARTICLE_DETAILS]: "/articles/",
-    [AppRoutes.ARTICLE_CREATE]: "/articles/new",
-    [AppRoutes.ARTICLE_EDIT]: "/articles/:id/edit",
-    [AppRoutes.ADMIN_PANEL]: "/admin",
-    [AppRoutes.FORBIDDEN]: "/forbidden",
-    // last
-    [AppRoutes.NOT_FOUND]: "*",
-}
+import { ProfilePageAsync as ProfilePage } from "@/pages/ProfilePage/ui/ProfilePage.async"
+import { AppRoutes, RoutesPath } from "@/shared/const/router"
+import { AppRoutesProps } from "@/shared/types/router"
 
 // Можно сделать массив - даже лучше
+
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: RoutesPath.main,
@@ -98,9 +67,3 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         element: <NotFoundPage />,
     },
 }
-// RouteProps хранит в себе
-//     caseSensitive?: boolean;
-//     children?: React.ReactNode;
-//     element?: React.ReactNode | null;
-//     index?: boolean;
-//     path?: string;

@@ -1,8 +1,8 @@
-import { WebpackConfiguration } from 'webpack-dev-server'
-import { BuildPaths } from '../build/types/config'
-import path from 'path'
-import { buildCssLoader } from '../build/loaders/buildCssLoader'
-import { DefinePlugin, RuleSetRule } from 'webpack'
+import { WebpackConfiguration } from "webpack-dev-server"
+import { BuildPaths } from "../build/types/config"
+import path from "path"
+import { buildCssLoader } from "../build/loaders/buildCssLoader"
+import { DefinePlugin, RuleSetRule } from "webpack"
 
 // файл нужен для переопределения конфига.
 export default ({ config }: { config: WebpackConfiguration }) => {
@@ -11,11 +11,15 @@ export default ({ config }: { config: WebpackConfiguration }) => {
         html: "",
         entry: "",
         src: path.resolve(__dirname, "..", "..", "src"),
-        buildLocales: '',
-        locales: '',
+        buildLocales: "",
+        locales: "",
     }
     config.resolve!.modules!.push(paths.src)
     config.resolve!.extensions!.push(".ts", ".tsx")
+    config.resolve!.alias = {
+        ...config.resolve!.alias,
+        "@": paths.src,
+    }
 
     // дефолтный loader который был настроен для svg теперь обрабатывать ее не будет
 
@@ -37,8 +41,8 @@ export default ({ config }: { config: WebpackConfiguration }) => {
     config.plugins?.push(
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
-            __API__: JSON.stringify('http://testapi.ru'),
-            __PROJECT__: JSON.stringify('storybook')
+            __API__: JSON.stringify("http://testapi.ru"),
+            __PROJECT__: JSON.stringify("storybook"),
         }),
     )
     // добавляем глобальную переменную __IS_DEV__ в среду разработки, чтобы не было ошибки

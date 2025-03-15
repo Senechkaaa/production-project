@@ -1,7 +1,6 @@
 import { classNames } from "@/shared/lib/classNames/classnames"
 import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
-import { RoutesPath } from "@/shared/config/routeConfig/routeConfig"
 import { useNavigate } from "react-router-dom"
 import { Button } from "@/shared/ui/Button/Button"
 import { useSelector } from "react-redux"
@@ -9,6 +8,7 @@ import { useSelector } from "react-redux"
 import { getArticleDetailsData } from "@/entities/Article/model/selectors/articleDetails"
 import { getCanEditArticle } from "@/pages/ArticleDetailsPage/model/selectors/article"
 import { HStack } from "@/shared/ui/Stack/Flex"
+import { RoutesPath } from "@/shared/const/router"
 
 interface ArticleDetailsPageHeaderProps {
     className?: string
