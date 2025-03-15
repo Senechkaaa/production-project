@@ -12,7 +12,6 @@ export default [
     {
         files: ["**/*.ts", "**/*.tsx"],
         rules: {
-            "no-unused-vars": "error", 
             "unused-imports/no-unused-imports": "error",
             "unused-imports/no-unused-vars": [
                 "warn",
