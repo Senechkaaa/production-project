@@ -1,9 +1,9 @@
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
-import pluginReact from 'eslint-plugin-react'
-import tsParser from '@typescript-eslint/parser'
-import reactHooks from 'eslint-plugin-react-hooks'
-
+import globals from "globals"
+import tseslint from "typescript-eslint"
+import pluginReact from "eslint-plugin-react"
+import tsParser from "@typescript-eslint/parser"
+import reactHooks from "eslint-plugin-react-hooks"
+import unusedImports from "eslint-plugin-unused-imports"
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -12,6 +12,17 @@ export default [
     {
         files: ["**/*.ts", "**/*.tsx"],
         rules: {
+            "no-unused-vars": "error", 
+            "unused-imports/no-unused-imports": "error",
+            "unused-imports/no-unused-vars": [
+                "warn",
+                {
+                    vars: "all",
+                    varsIgnorePattern: "^_",
+                    args: "after-used",
+                    argsIgnorePattern: "^_",
+                },
+            ],
             "react/jsx-indent": [2, 4],
             "react/jsx-indent-props": [2, 4],
             indent: [2, 4],
@@ -36,13 +47,14 @@ export default [
         plugins: {
             tseslint,
             "react-hooks": reactHooks,
+            "unused-imports": unusedImports,
         },
         languageOptions: {
             globals: {
                 ...globals.browser,
                 __IS_DEV__: true,
                 __API__: true,
-                __PROJECT__: true
+                __PROJECT__: true,
             },
             parser: tsParser,
             parserOptions: {
