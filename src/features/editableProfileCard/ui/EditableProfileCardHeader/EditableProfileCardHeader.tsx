@@ -8,9 +8,9 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { getProfileReadonly } from "@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly"
 import { profileActions } from "@/features/editableProfileCard/model/slice/profileSlice"
 import { updateProfileData } from "@/features/editableProfileCard/model/service/updateProfileData/updateProfileData"
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button"
-import { Text } from "@/shared/ui/Text/Text"
-import { HStack } from "@/shared/ui/Stack/Flex"
+import { Button, ButtonTheme } from "@/shared/ui/Button"
+import { Text } from "@/shared/ui/Text"
+import { HStack } from "@/shared/ui/Stack"
 
 interface EditableProfileCardHeaderProps {
     className?: string

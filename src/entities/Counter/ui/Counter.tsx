@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button"
+import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button"
 import { counterActions } from "../model/slice/counterSlice"
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue"
 

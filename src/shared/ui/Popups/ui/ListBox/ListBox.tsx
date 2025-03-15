@@ -3,7 +3,7 @@ import { Fragment, ReactNode } from "react"
 import cls from "./ListBox.module.scss"
 import { classNames } from "@/shared/lib/classNames/classnames"
 import { Button } from "../../../Button/Button"
-import { HStack } from "../../../Stack/Flex"
+import { HStack } from "../../../Stack"
 import { DropDownDirection } from "../../../../types/ui"
 import { mapDirectionClass } from "../../consts/consts"
 import popupCls from "../../styles/popup.module.scss"
@@ -24,7 +24,6 @@ interface ListBoxProps {
     direction?: DropDownDirection
     label?: string
 }
-
 
 export const ListBox = (props: ListBoxProps) => {
     const {

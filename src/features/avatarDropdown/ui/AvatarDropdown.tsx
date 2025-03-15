@@ -11,7 +11,7 @@ import {
 import { useSelector } from "react-redux"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { DropDown } from "@/shared/ui/Popups"
-import { Avatar } from "@/shared/ui/Avatar/Avatar"
+import { Avatar } from "@/shared/ui/Avatar"
 import { RoutesPath } from "@/shared/const/router"
 
 interface AvatarDropdownProps {

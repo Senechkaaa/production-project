@@ -1,7 +1,7 @@
 import { classNames } from "@/shared/lib/classNames/classnames"
 import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
-import { Text, TextTheme } from "@/shared/ui/Text/Text"
+import { Text, TextTheme } from "@/shared/ui/Text"
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm"
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading"
 import { getProfileError } from "../../model/selectors/getProfileError/getProfileError"
@@ -20,7 +20,7 @@ import {
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader"
-import { VStack } from "@/shared/ui/Stack/Flex"
+import { VStack } from "@/shared/ui/Stack"
 import { ValidateProfileError } from "@/features/editableProfileCard/model/consts/consts"
 
 interface EditableProfileCardProps {

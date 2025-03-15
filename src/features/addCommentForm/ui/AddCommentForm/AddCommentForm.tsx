@@ -2,8 +2,8 @@ import { classNames } from "@/shared/lib/classNames/classnames"
 import cls from "./AddCommentForm.module.scss"
 import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
-import { Input } from "@/shared/ui/Input/Input"
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button"
+import { Input } from "@/shared/ui/Input"
+import { Button, ButtonTheme } from "@/shared/ui/Button"
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -18,7 +18,7 @@ import {
     addCommentFormActions,
     addCommentFormReducer,
 } from "../../model/slices/addCommentFormSlice"
-import { HStack } from "@/shared/ui/Stack/Flex"
+import { HStack } from "@/shared/ui/Stack"
 
 export interface AddCommentFormProps {
     className?: string
