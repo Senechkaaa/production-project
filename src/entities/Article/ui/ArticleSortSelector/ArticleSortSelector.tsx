@@ -16,7 +16,7 @@ interface ArticleSortSelectorProps {
 
 // лучше сделать фичой
 
-export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
+export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
     const { t } = useTranslation()
     const { className, onChangeOrder, onChangeSort, order, sort } = props
 
@@ -69,4 +69,4 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
             />
         </div>
     )
-})
+}

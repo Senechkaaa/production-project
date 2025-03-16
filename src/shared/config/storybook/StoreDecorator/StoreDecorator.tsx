@@ -6,13 +6,14 @@ import { ReducersList } from "@/shared/lib/components/DynamicModuleLoader/Dynami
 import { articleDetailsReducer } from "@/entities/Article/model/slice/articleDetailsSlice"
 import { addCommentFormReducer } from "@/features/addCommentForm/model/slices/addCommentFormSlice"
 import { profileReducer } from "@/features/editableProfileCard/model/slice/profileSlice"
+import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/testing"
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentFormReducer,
-    articleDetailsPage: articleDetailsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 }
 // создаем фейковый reducer
 

@@ -8,7 +8,7 @@ import {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader"
 import cls from "./ArticleDetailsPage.module.scss"
 import { Page } from "@/widgets/Page/Page"
-import { articleDetailsReducer } from "../../model/slices"
+import { articleDetailsPageReducer } from "../../model/slices"
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader"
 import { VStack } from "@/shared/ui/Stack"
 import { ArticleRecommendationList } from "@/features/articleRecommendationList"
@@ -20,7 +20,7 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-    articleDetailsPage: articleDetailsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 }
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
