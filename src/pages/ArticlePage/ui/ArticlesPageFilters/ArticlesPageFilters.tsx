@@ -4,10 +4,7 @@ import { useTranslation } from "react-i18next"
 import { memo, useCallback } from "react"
 import {
     ArticleSortField,
-    ArticleSortSelector,
-    ArticleTypeTabs,
     ArticleView,
-    ArticleViewSelector,
 } from "@/entities/Article"
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch"
 import { useSelector } from "react-redux"
@@ -25,6 +22,9 @@ import { SortOrder } from "@/shared/types"
 import { fetchArticlesList } from "@/pages/ArticlePage/model/services/fetchArticleList/fetchArticleList"
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce"
 import { ArticleType } from "@/entities/Article"
+import { ArticleSortSelector } from "@/features/ArticleSortSelector"
+import { ArticleViewSelector } from "@/features/ArticleViewSelector"
+import { ArticleTypeTabs } from "@/features/ArticleTypeTabs"
 
 interface ArticlesPageFiltersProps {
     className?: string
