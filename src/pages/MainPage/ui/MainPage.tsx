@@ -5,6 +5,7 @@ import { Input } from "@/shared/ui/Input"
 import { Page } from "@/widgets/Page/Page"
 import { RatingCard } from "@/entities/RatingCard"
 import { Button } from "@/shared/ui/Button"
+import { Counter } from "@/entities/Counter"
 
 const MainPage = () => {
     const { t } = useTranslation()
@@ -24,6 +25,7 @@ const MainPage = () => {
                 value={value}
                 onChange={onChange}
             />
+            <Counter/>
         </Page>
     )
 }
