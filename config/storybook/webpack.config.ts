@@ -3,7 +3,6 @@ import { BuildPaths } from "../build/types/config"
 import path from "path"
 import { buildCssLoader } from "../build/loaders/buildCssLoader"
 import { DefinePlugin, RuleSetRule } from "webpack"
-
 // файл нужен для переопределения конфига.
 export default ({ config }: { config: WebpackConfiguration }) => {
     const paths: BuildPaths = {
