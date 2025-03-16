@@ -12,20 +12,20 @@ export function buildWebpackConfig(options: BuildOptions): Configuration {
         mode: mode,
         entry: paths.entry,
         output: {
-            filename: '[name].[contenthash].js',
+            filename: "[name].[contenthash].js",
             path: paths.build,
             clean: true,
-            publicPath: '/'
+            publicPath: "/",
         },
 
-        plugins:  buildPlugins(options),
+        plugins: buildPlugins(options),
         module: {
             rules: buildLoaders(options),
         },
         resolve: buildResolvers(options),
         //   настройка путей
-        devtool: isDev ? 'inline-source-map' : false,
-        //   если дев, то будет показывать азгрузка
+        devtool: isDev ? "eval-cheap-module-source-map" : false,
+        // если дев, то будет быстрые rebuild 
         devServer: isDev ? buildDevServer(options) : undefined,
         //   если дев режим, то сервер запустится
     }
