@@ -11,7 +11,7 @@ import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink"
 import { HStack } from "@/shared/ui/Stack"
 import { NotificationButton } from "@/features/notificationButton"
 import { AvatarDropdown } from "@/features/avatarDropdown"
-import { RoutesPath } from "@/shared/const/router"
+import { getRouteArticleCreate } from "@/shared/const/router"
 
 interface NavbarProps {
     className?: string
@@ -42,7 +42,7 @@ export const NavBar = memo(({ className }: NavbarProps) => {
                 <AppLink
                     className={cls.createBtn}
                     theme={AppLinkTheme.SECONDARY}
-                    to={RoutesPath.article_create}
+                    to={getRouteArticleCreate()}
                 >
                     {t("Создать статью")}
                 </AppLink>
