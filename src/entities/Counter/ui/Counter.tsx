@@ -1,13 +1,10 @@
-import { useDispatch, useSelector } from "react-redux"
 import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button"
-import { counterActions, useCounterActions } from "../model/slice/counterSlice"
+import { useCounterActions } from "../model/slice/counterSlice"
 import {
-    getCounterValue,
     useCounterValue,
 } from "../model/selectors/getCounterValue/getCounterValue"
 
 export const Counter = () => {
-    const dispatch = useDispatch()
     const counterValue = useCounterValue()
     const { add, decrement, increment } = useCounterActions()
     const handleInc = () => {
