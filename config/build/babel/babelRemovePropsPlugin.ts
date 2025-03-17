@@ -1,7 +1,7 @@
 import { PluginItem } from "@babel/core"
 
 // самописный BabelPlugin, который в продакшн сборке удаляет атрибут data-testid
-export default function (): PluginItem {
+export default function babelRemovePropsPlugin(): PluginItem {
     return {
         visitor: {
             Program(path, state) {
@@ -11,12 +11,12 @@ export default function (): PluginItem {
                     JSXIdentifier(current) {
                         const nodeName = current.node.name
 
-                        if(forbidden.includes(nodeName)) {
+                        if (forbidden.includes(nodeName)) {
                             current.parentPath.remove()
                         }
-                    }
+                    },
                 })
-            }
+            },
         },
     }
 }

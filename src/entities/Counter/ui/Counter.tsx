@@ -38,7 +38,6 @@ export const Counter = () => {
                 decrement
             </Button>
             <Button
-                data-testid="decrement-btn"
                 theme={ButtonTheme.OUTLINE}
                 size={ButtonSize.M}
                 onClick={handleAddFive}

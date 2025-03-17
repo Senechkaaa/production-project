@@ -1,4 +1,4 @@
-import babelRemovePropsPlugin from "../babel/babelREmovePropsPlugin"
+import babelRemovePropsPlugin from "../babel/babelRemovePropsPlugin"
 import { BuildOptions } from "../types/config"
 
 interface BuildBabelLoaderProps extends BuildOptions {
