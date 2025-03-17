@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next"
 import { Input } from "@/shared/ui/Input"
 import { Page } from "@/widgets/Page/Page"
 import { RatingCard } from "@/entities/RatingCard"
-import { Button } from "@/shared/ui/Button"
 import { Counter } from "@/entities/Counter"
 
 const MainPage = () => {

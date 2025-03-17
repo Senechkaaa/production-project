@@ -26,7 +26,7 @@
         "prepare": "husky install"
     },
     "link-staged": {
-        "**/*.{ts, tsx}": "npx eslint"
+        "**/*.{ts, tsx}": "eslint"
     },
     "keywords": [],
     "author": "",
